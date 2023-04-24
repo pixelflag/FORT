@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3269654374760506941
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5517018064474882424}
+  - component: {fileID: 3212912232135344646}
+  m_Layer: 0
+  m_Name: ObjectLibrary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5517018064474882424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269654374760506941}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3212912232135344646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3269654374760506941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b011fec06658e4a47ba485c222483bba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fires:
+  - {fileID: 325658906691463495, guid: 20655c3ec04e1f142a0925d5166a1312, type: 3}
+  - {fileID: 4085032174424059430, guid: e81ab0583be16414f9fc3c8dcce1a096, type: 3}
+  - {fileID: -2423073255051578550, guid: b1d23c16a3f13fe4c81e13b45584c6ce, type: 3}
+  effectPath: Assets/graphics/effect.png
+  EffectSprites:
+  - {fileID: -9119609629918001555, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -43670912784538107, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -7781146665146789375, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -4455475705303005430, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 5889496502269410419, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 3143613230681548460, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -5603356550365630772, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -3684681138830246548, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -4771531512970294270, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -5966754432697880526, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -7508183899477762614, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 2741458080925261138, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 7598039353200945771, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -3099951077275221391, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -8904496110776524414, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -4884118471392697797, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 3870537759411230635, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: -4288846908899846256, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 4219302889527511645, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  - {fileID: 5776652282424028359, guid: 1ebed8d9fa881da42977d15b318b9633, type: 3}
+  player: {fileID: 3049563230843378244, guid: bfb13d9919133764fb8df9742e5b9b50, type: 3}
+  buddies: {fileID: 1416553571366764, guid: 699cb1cbbce3e204d9d5fe58ea6b018b, type: 3}
+  weapon: {fileID: 1036065772328208691, guid: 901608cb4afb68542a12549539562809, type: 3}
+  statue: {fileID: 1558267299369438744, guid: fb27b09f94a2f524fa38f791ca651740, type: 3}
+  messageEffect: {fileID: 4783154887261849095, guid: 4ab9ac740d8205644b7f9f0d8c70290a,
+    type: 3}
+  battelEffect: {fileID: 1530728872955496400, guid: 1df6738112a287f4dbb975fd62824fb0,
+    type: 3}

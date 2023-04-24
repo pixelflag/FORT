@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5113571839544457350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5113571839544457349}
+  - component: {fileID: 5113571839544457348}
+  - component: {fileID: 5113571839544457351}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5113571839544457349
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113571839544457350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5113571839544457348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113571839544457350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 150024155adbd91449302cbfb5083cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeSpeed: 0.01
+  bgmVolume: 0.5
+  currentBgmVolume: 0
+  seVolume: 0.5
+--- !u!114 &5113571839544457351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113571839544457350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be992765efa8124cbe8112501d0d64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: {fileID: 8300000, guid: 7de9f6e02da77d4408f32596a41ced68, type: 3}
+  BossDead: {fileID: 8300000, guid: f10eb2c80fd180b4aa7639ed02acdc89, type: 3}
+  EnemyDead: {fileID: 8300000, guid: 518a421c498ccc44b8044dd29db400fb, type: 3}
+  ReatinerDead: {fileID: 8300000, guid: a2f4310159304e84aad9f9497d360f78, type: 3}
+  Rescue: {fileID: 8300000, guid: 02906db7bc3be5744a7c689424f1015e, type: 3}
+  Click: {fileID: 8300000, guid: e13d01320c1a1834f8588152fd279802, type: 3}
+  Levelup: {fileID: 8300000, guid: 5209f9e1b5921124c984db47a4dba693, type: 3}
+  Pause: {fileID: 0}
+  Lucky: {fileID: 0}
+  Change: {fileID: 0}
+  BGM_Catel: {fileID: 8300000, guid: c4d0e2737ec7e434893f8ddd1eded7b7, type: 3}
+  BGM_Clear: {fileID: 8300000, guid: 3df9b3db6dd8abe419fc86de53a7f78c, type: 3}
+  BGM_Feald1: {fileID: 8300000, guid: 46b4fc1e3f98bde4f97be7536250b4be, type: 3}
+  BGM_Feald2: {fileID: 8300000, guid: 4c01bf04fb4b8e146bf557dd5a5c1637, type: 3}
+  BGM_Feald3: {fileID: 8300000, guid: ea7a6c6851b0bc447ae73ba9d42d25c0, type: 3}
+  BGM_Feald4: {fileID: 8300000, guid: fa924f66129f73446b2dfb655625b2b9, type: 3}
+  BGM_GameOver: {fileID: 8300000, guid: ff09ae1d17ea56644bf1e19476b6961b, type: 3}
+  BGM_LastBattle: {fileID: 8300000, guid: 3d28c2961ddf99940b5cfb0543e668fe, type: 3}

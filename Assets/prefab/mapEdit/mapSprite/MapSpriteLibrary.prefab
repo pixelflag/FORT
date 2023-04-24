@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1210237877842359836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6957284495115700219}
+  - component: {fileID: 6428230674136842321}
+  m_Layer: 0
+  m_Name: MapSpriteLibrary
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6957284495115700219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210237877842359836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6428230674136842321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210237877842359836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669c136ba3e2acc498cc49d17dce55cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  brokenSprites:
+  - {fileID: 4636129760540362602, guid: 7d3f19d8016f4b1408300726106d3604, type: 3}
+  - {fileID: 4636129760540362602, guid: 9e12050afc3b76e47824c69cb0ce6bba, type: 3}
+  - {fileID: 4636129760540362602, guid: 39a2fde84a72d254183cdd155cfeaa42, type: 3}
+  - {fileID: 4636129760540362602, guid: 27c5b474b11f5394481d2f8041308ab6, type: 3}
+  - {fileID: 4636129760540362602, guid: 1ba8eac6072a24a44ae94fc5cb49631e, type: 3}
+  - {fileID: 4636129760540362602, guid: 6966c554333e3d349bcecc8267c10c80, type: 3}
+  - {fileID: 4636129760540362602, guid: 652cd09b73ac0a14fa7f9ed617cf1fc1, type: 3}
+  - {fileID: 4636129760540362602, guid: 92be06d1fa0e1a64297c135273e7b39f, type: 3}
+  - {fileID: 4636129760540362602, guid: 16fdeb9f2fe4f364badb616cfdf97e0d, type: 3}
+  - {fileID: 4636129760540362602, guid: cfb7f0b88f1c622469a3f897271b041f, type: 3}
+  - {fileID: 4636129760540362602, guid: 680287e1808290144a0d5b11049fc0df, type: 3}
+  ramdomSprites:
+  - {fileID: -7718305400110124010, guid: 0c8462fc3cb77af4898d77f71eb801b3, type: 3}
+  - {fileID: -7718305400110124010, guid: ff2f5e9f16eb9ff4b82e269469fc95ea, type: 3}
+  - {fileID: -7718305400110124010, guid: 95665931a7f10db4c86ae19af827ee45, type: 3}
+  - {fileID: -7718305400110124010, guid: 81dca530afc359b4fb5f4a7ae23a7910, type: 3}
+  - {fileID: -7718305400110124010, guid: 8ab00ae1c437dc949b53eab17605e656, type: 3}
+  - {fileID: -7718305400110124010, guid: fe68eabd3e88d8e469a8130d85ef817d, type: 3}
+  - {fileID: -7718305400110124010, guid: ec8fc35bcd642d6448529c118c9dd7bb, type: 3}
+  - {fileID: -7718305400110124010, guid: f9b40c07f0131b44b8451e46ad7469a0, type: 3}
+  animationSprites:
+  - {fileID: 8082665260417140653, guid: f4644cbf1ac2d0d4d9cab8b31fde51e7, type: 3}
