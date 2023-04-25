@@ -7,7 +7,7 @@ public class CharacterTrackRouteMove : ICharacterLogic
     private int idleWait = 30;
     private int count = 0;
 
-    private Character self;
+    private Unit self;
     private Vector2 offsetPosition;
 
     private int seachWait = 20;
@@ -23,7 +23,7 @@ public class CharacterTrackRouteMove : ICharacterLogic
     }
     public bool isIdle { get{ return state == State.Idle; } }
 
-    public void Initialize(Character self, int seachArea)
+    public void Initialize(Unit self, int seachArea)
     {
         this.self = self;
 
@@ -47,7 +47,7 @@ public class CharacterTrackRouteMove : ICharacterLogic
         searchTarget.SetRadius(radius);
     }
 
-    public void Execute(FieldMapObject map, Character player, List<Enemy> targets)
+    public void Execute(FieldMapObject map, Unit player, List<Unit> targets)
     {
         switch (state)
         {

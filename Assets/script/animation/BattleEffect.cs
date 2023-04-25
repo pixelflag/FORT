@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BattleEffect : MassObject
 {
@@ -26,44 +24,6 @@ public class BattleEffect : MassObject
         count = 0;
 
         accel = new Vector3();
-    }
-
-    public override void ResetObject()
-    {
-        count = 0;
-        int rand = Random.Range(0, 6);
-        switch (rand)
-        {
-            case 0:
-                accel.x = -power;
-                accel.y = power;
-                view.ChangeSprite(sprites[0]);
-                break;
-            case 1:
-                accel.x = -power;
-                accel.y = -power;
-                view.ChangeSprite(sprites[1]);
-                break;
-            case 2:
-                accel.x = power;
-                accel.y = power;
-                view.ChangeSprite(sprites[2]);
-                break;
-            case 3:
-                accel.x = power;
-                accel.y = -power;
-                view.ChangeSprite(sprites[3]);
-                break;
-            case 4:
-            case 5:
-                view.ChangeSprite(sprites[rand]);
-                break;
-            default:
-                view.ChangeSprite(sprites[4]);
-                break;
-        }
-
-        base.ResetObject();
     }
 
     public override void Execute()

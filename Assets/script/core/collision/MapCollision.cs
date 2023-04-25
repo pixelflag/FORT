@@ -1,31 +1,22 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class MapCollision
+public class MapCollision : DI
 {
-	public void Execute(FieldMapObject map, ObjectExecutor objects)
+	public void Execute()
 	{
-		// Player
-		Player player = objects.player;
-		if (objects.player != null)
-		{
-			CheckMapCorrection(objects.player);
-			if (player.weapon != null)
-				CheckBrokenSprite(player.weapon.collision, player.GetAttackData());
-		}
+		FieldMapObject map = field.map;
 
-		// Buddies
-		foreach (Character buddie in objects.buddies)
+		for (int i = 0; i < field.teams.Length; i++)
 		{
-			CheckMapCorrection(buddie);
-			if (buddie.weapon != null)
-				CheckBrokenSprite(player.weapon.collision, player.GetAttackData());
-		}
+			List<Unit> units = field.teams[i].units;
 
-		// Enemy
-		foreach (MassObject obj in map.enemys)
-        {
-			CheckMapCorrection(obj);
+			for (int j = 0; j < units.Count; j++)
+			{
+                CheckMapCorrection(units[i]);
+				if (units[i].weapon != null)
+					CheckBrokenSprite(units[i].weapon.collision, units[i].GetAttackData());
+			}
 		}
 
 		// Fire
@@ -40,8 +31,8 @@ public class MapCollision
 			if (col.mapCollisionDisabled == false)
 			{
 				Vector3 resultPosition = col.position;
-				int radius = col.GetRadius();
-				Box box = col.GetBox();
+				int radius = col.radius;
+				Box box = col.box;
 
 				int t = (int)(box.topRight.y / Global.gridSize.y);
 				int r = (int)(box.topRight.x / Global.gridSize.x);
@@ -78,7 +69,7 @@ public class MapCollision
 		{
 			if (!wc.objectCollisionDisabled)
 			{
-				Box box = wc.GetBox();
+				Box box = wc.box;
 				for (int y = (int)box.bottomLeft.y - 1; y < (int)box.topRight.y + 1; y++)
 				{
 					for (int x = (int)box.bottomLeft.x - 1; x < (int)box.topRight.x + 1; x++)

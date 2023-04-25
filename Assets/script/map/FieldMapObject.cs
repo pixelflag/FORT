@@ -18,11 +18,8 @@ public class FieldMapObject : PixelObject
     public void AddAnimationSprite(AnimationMapSprite aSprite) { animationMapSprite.Add(aSprite); }
     public void RemoveAnimationSprite(AnimationMapSprite aSprite) { animationMapSprite.Remove(aSprite); }
 
-    public List<Enemy> enemys { get; private set; }
-    public void AddEnemy(Enemy enemy) { enemys.Add(enemy); }
-
-    public List<Item> items { get; private set; }
-    public void AddItem(Item item) { items.Add(item); }
+    public List<Unit> units { get; private set; }
+    public void AddEnemy(Unit unit) { units.Add(unit); }
 
     public MapEventObject[] events;
     public MapEntranceObject[] entrance;
@@ -97,7 +94,7 @@ public class FieldMapObject : PixelObject
             }
         }
 
-        enemys = new List<Enemy>();
+        units = new List<Unit>();
         /*
         foreach (MapEnemyData en in mapData.enemys)
         {
@@ -106,9 +103,6 @@ public class FieldMapObject : PixelObject
             AddEnemy(enemy);
         }
         */
-
-        // itemÇ‡çÏÇÈÅB
-        items = new List<Item>();
 
         animationMapSprite = new List<AnimationMapSprite>();
 
@@ -153,10 +147,8 @@ public class FieldMapObject : PixelObject
     {
         for (int i = 0; i < animationMapSprite.Count; i++)
             animationMapSprite[i].Execute();
-        for (int i = 0; i < enemys.Count; i++) 
-            ObjectExecute(enemys[i]);
-        for (int i = 0; i < items.Count; i++)
-            ObjectExecute(items[i]);
+        for (int i = 0; i < units.Count; i++) 
+            ObjectExecute(units[i]);
 
         void ObjectExecute(MassObject obj)
         {
@@ -167,18 +159,11 @@ public class FieldMapObject : PixelObject
 
     public void CheckDestroy()
     {
-        for (int i = enemys.Count - 1; 0 <= i; i--)
-            if (enemys[i].isDestroy == true)
+        for (int i = units.Count - 1; 0 <= i; i--)
+            if (units[i].isDestroy == true)
             {
-                Destroy(enemys[i].gameObject);
-                enemys.RemoveAt(i);
-            }
-
-        for (int i = items.Count - 1; 0 <= i; i--)
-            if (items[i].isDestroy == true)
-            {
-                Destroy(items[i].gameObject);
-                items.RemoveAt(i);
+                Destroy(units[i].gameObject);
+                units.RemoveAt(i);
             }
     }
 

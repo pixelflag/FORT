@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5288044684657245065}
   - component: {fileID: 3383717221269104229}
-  - component: {fileID: 5589114209643521758}
   - component: {fileID: 1601387826205884557}
   m_Layer: 0
   m_Name: MapEnter
@@ -46,29 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f68a056461453d2418f81f2fea5229d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  h: 0
-  direction: 2
+  _direction: 0
   sprites:
   - {fileID: 7434870685880743829, guid: 56b02a55a58888d479d44a593921955e, type: 3}
   - {fileID: -6088974121743375344, guid: 56b02a55a58888d479d44a593921955e, type: 3}
   - {fileID: -6129910206980696903, guid: 56b02a55a58888d479d44a593921955e, type: 3}
   - {fileID: 3700354298266273774, guid: 56b02a55a58888d479d44a593921955e, type: 3}
---- !u!114 &5589114209643521758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4209601142049629201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c45e21bc4f1f74d9110cd69938935b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fitToGrid: 1
-  disableZ: 1
-  grid: 8
-  offset: 0
 --- !u!212 &1601387826205884557
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -13,13 +13,13 @@ public class IceJavelin : FireObject
     private int maxLife = 120;
     private int life = 0;
 
-    public override void Initialize(ObjectType type, WeaponParameters weapon, Direction4Type direction, int attackPower)
+    public override void Initialize(FireData fireData)
     {
-        base.Initialize(type, weapon, direction, attackPower);
+        base.Initialize(fireData);
 
         int index = 0;
         SpriteRenderer render = GetComponent<SpriteRenderer>();
-        switch (direction)
+        switch (fireData.direction)
         {
             case Direction4Type.Up:
                 index = 1;

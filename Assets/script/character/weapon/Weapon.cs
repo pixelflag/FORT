@@ -2,14 +2,15 @@
 
 public class Weapon : VPixelObject
 {
-    private Character master;
+    public WeaponType type { get; private set; }
+    private Unit parent;
+
     private WeaponSkin skin = default;
     private WMotionBase motion = default;
-    public WeaponParameters weaponData { get; private set; }
+    public WeaponData weaponData { get; private set; }
 
-    public WeaponType type { get; private set; }
     public CollisionObject collision { get; private set; }
-    public int totalFrame { get { return motion.GetTotalFrame(); } }
+    public int totalframe => motion.GetTotalFrame();
 
     private State state;
     private enum State
@@ -18,20 +19,19 @@ public class Weapon : VPixelObject
         Attack,
     }
 
-    public void Initialize(Character master, WeaponParameters weaponData, WMotionBase motion, WeaponSkin skin)
+    public void Initialize(Unit parent, WeaponData weaponData, WMotionBase motion, WeaponSkin skin)
     {
         if (motion == null) throw new System.Exception("motion is null!!");
-        if (skin == null) throw new System.Exception("skin is null!!");
+        if (skin   == null) throw new System.Exception("skin is null!!");
 
         this.weaponData = weaponData;
-        this.master = master;
+        this.parent = parent;
         this.motion = motion;
         this.skin = skin;
 
         base.Initialize();
-        collision = new CollisionObject(transform);
+        collision = new CollisionObject(transform, motion.extends);
         collision.objectCollisionDisabled = true;
-        collision.SetExtends(motion.extends);
 
         spriteRenderer.sprite = null;
     }
@@ -80,8 +80,13 @@ public class Weapon : VPixelObject
     private void SpawnFire()
     {
         Vector3 position = transform.position;
-        int attack = master.GetAttackPower();
-        Direction4Type direction = master.direction.direction4;
-        creater.CreateFire(master.objectType, weaponData, position, direction, attack);
+        FireData fireData = new FireData();
+        fireData.fireType = FireType.Fire;
+        fireData.teamID = parent.teamID;
+        fireData.weapon = weaponData;
+        fireData.attackPower = parent.GetAttackPower();
+        fireData.direction = parent.direction.direction4;
+
+        creater.CreateFire(fireData, position);
     }
 }

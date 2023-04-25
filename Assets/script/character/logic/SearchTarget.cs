@@ -18,7 +18,7 @@ public class SearchTarget
         seachArea = new Vector2(eyeRadius, 0).sqrMagnitude;
     }
 
-    public SearchTargetResult Seach(Vector2 startPos, Enemy target)
+    public SearchTargetResult Seach(Vector2 startPos, Unit target)
     {
         SearchTargetResult result = new SearchTargetResult();
         result.found = false;
@@ -35,14 +35,14 @@ public class SearchTarget
         return result;
     }
 
-    public SearchTargetResult Seach(Vector2 startPos, List<Enemy> targets)
+    public SearchTargetResult Seach(Vector2 startPos, List<Unit> targets)
     {
         SearchTargetResult result = new SearchTargetResult();
         result.found = false;
         result.position = startPos;
         float nearDist = new Vector2(eyeRadius * 2, 0).sqrMagnitude;
 
-        foreach (Enemy target in targets)
+        foreach (Unit target in targets)
         {
             Vector2 targetPos = target.position;
             float dist = (startPos - targetPos).sqrMagnitude;

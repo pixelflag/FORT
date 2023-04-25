@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireBall : FireObject
@@ -18,9 +16,9 @@ public class FireBall : FireObject
 
     private SpriteRenderer render;
 
-    public override void Initialize(ObjectType type, WeaponParameters weapon, Direction4Type direction, int attackPower)
+    public override void Initialize(FireData fireData)
     {
-        base.Initialize(type, weapon, direction, attackPower);
+        base.Initialize(fireData);
 
         render = GetComponent<SpriteRenderer>();
         render.sprite = sprites[0];

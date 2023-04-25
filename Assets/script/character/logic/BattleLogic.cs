@@ -1,67 +1,93 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
-public class BattleLogic
+public class BattleLogic : DI
 {
-    public static int PlayerAttack(int attackPower)
-    {
-        int rand = Random.Range(0, 100);
-        // 会心の一撃
-        if (rand < 10)
-        {
-            attackPower *= 2;
-        }
-        // 超会心の一撃
-        else if (rand < 1)
-        {
-            attackPower *= 4;
-        }
+    public UnitType type { get; private set; }
 
-        return attackPower;
+    // 武器の影響を取り込む
+    public LifeLogic lifeLogic { get; private set; }
+
+    private int damageInvisibleFrame = 10;
+    protected List<DamageEvent> damageEvents;
+
+    public BattleLogic(UnitType type)
+    {
+        this.type = type;
+
+        lifeLogic = new LifeLogic();
+        lifeLogic.FullRecovery();
+
+        damageEvents = new List<DamageEvent>();
     }
 
-    public static int PlayerDefence(int attackPower)
+    public int GetAttackPower() => data.GetUnitData(type).attack;
+
+    public void Execute()
     {
-        int rand = Random.Range(0, 100);
-        // 防御
-        if (rand< 30)
+        for (int i = damageEvents.Count - 1; i < 0; i--)
         {
-            attackPower /= 2;
+            damageEvents[i].CountDown();
+            if (damageEvents[i].isZeroWait)
+                damageEvents.RemoveAt(i);
         }
-        // 回避
-        else if (rand < 10)
+        damageInvisibleFrame--;
+    }
+
+    public void AddDamaeEvent(AttackData attack)
+    {
+        foreach (DamageEvent de in damageEvents)
         {
-            attackPower = 1;
+            if (de.id != attack.id)
+                damageEvents.Add(new DamageEvent(attack.id, damageInvisibleFrame, attack));
         }
-
-        return attackPower;
     }
 
-    public static int EnemyAttack(int attackPower)
+    public DamageResult DamageExecute(Vector3 position)
     {
-        // 複雑化するだけだから、今はそのまま返すのでいい。
-        return attackPower;
-    }
+        var dr = new DamageResult();
 
-    public static int EnemyDefense(int attackPower)
-    {
-        // こっちも軽減処理せずにそのまま返せばいい。
-        return attackPower;
-    }
-
-    // 一定確率で生き残る
-    public static int SafeLife(int life, int attackPower)
-    {
-        life -= attackPower;
-
-        if (life <= 0)
+        foreach (DamageEvent ev in damageEvents)
         {
-            int rand = Random.Range(0, 100);
-            if (rand < 10)
-            {
-                life = 1;
-            }
+            dr.damage += ev.attack.power;
+            dr.vector += Calculate.PositionToNomaliseVector(ev.attack.position, position);
+            ev.EndDamage();
         }
 
-        return life;
+        lifeLogic.SetLife(lifeLogic.current - dr.damage);
+        return dr;
     }
+}
+
+public struct DamageEvent
+{
+    public int id;
+    public int wait;
+    public AttackData attack;
+    public bool isEndDamage;
+    public bool isZeroWait => wait <= 0;
+
+    public DamageEvent(int id, int wait, AttackData attack)
+    {
+        this.id = id;
+        this.wait = wait;
+        this.attack = attack;
+        isEndDamage = false;
+    }
+
+    public void CountDown()
+    {
+        wait--;
+    }
+
+    public void EndDamage()
+    {
+        isEndDamage = true;
+    }
+}
+
+public struct DamageResult
+{
+    public int damage;
+    public Vector3 vector;
 }

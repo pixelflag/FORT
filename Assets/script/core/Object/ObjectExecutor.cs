@@ -1,21 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using pixelflag.controller;
 
-public class ObjectExecutor
+public class ObjectExecutor :DI
 {
     public static ObjectExecutor instance;
     public ObjectExecutor()
     {
         instance = this;
 
-        buddies = new List<Character>();
         fires = new List<FireObject>();
         effects = new List<MassObject>();
     }
 
-    public Player player;
-    public List<Character> buddies { get; private set; }
     public List<FireObject> fires { get; private set; }
     public List<MassObject> effects { get; private set; }
 
@@ -23,19 +19,12 @@ public class ObjectExecutor
     {
         // Destroyはフラグをたてて、確実にdestroyの処理タイミングで処分する。
 
-        if (player != null)
-            player.ObjectDestroy();
-
-        for (int i = buddies.Count - 1; 0 <= i; i--)
-            buddies[i].ObjectDestroy();
-
         for (int i = fires.Count - 1; 0 <= i; i--)
             fires[i].ObjectDestroy();
 
         for (int i = effects.Count - 1; 0 <= i; i--)
             effects[i].ObjectDestroy();
     }
-
 
     public void FlushFire()
     {
@@ -46,34 +35,55 @@ public class ObjectExecutor
 
     public void Execute()
     {
-        player.Execute();
-        foreach (MassObject obj in buddies) ObjectExecute(obj);
-        foreach (MassObject obj in effects) ObjectExecute(obj);
+        foreach (MassObject obj in effects)
+            if (obj.isDestroy == false)
+                obj.Execute();
 
-        Vector2 areaSize = FieldControl.instance.map.areaSize;
+        for (int i = 0; i < field.teams.Length; i++)
+        {
+            for (int j = 0; j < field.teams[i].units.Count; j++)
+            {
+                field.teams[i].units[j].Execute();
+            }
+        }
+
+        Vector2 areaSize = field.map.areaSize;
         foreach (MassObject obj in fires)
         {
             if (obj.x < 0 || areaSize.x < obj.x || obj.y < areaSize.y || 0 < obj.y)
+            {
                 obj.ObjectDestroy();
+            }
             else
-                ObjectExecute(obj);
+            {
+                if (obj.isDestroy == false)
+                    obj.Execute();
+            }
         }
+    }
 
-        void ObjectExecute(MassObject obj)
+    public void ExecuteEvent()
+    {
+        for (int i = 0; i < field.teams.Length; i++)
         {
-            if (obj.isDestroy == false )
-                obj.Execute();
+            for (int j = 0; j < field.teams[i].units.Count; j++)
+            {
+                field.teams[i].units[j].ExecuteEvent();
+            }
         }
     }
 
     public void CheckDestroy()
     {
-        for (int i = buddies.Count - 1; 0 <= i; i--)
-            if (buddies[i].isDestroy == true)
-            {
-                Object.Destroy(buddies[i].gameObject);
-                buddies.RemoveAt(i);
-            }
+        for (int i = 0; i < field.teams.Length; i++)
+        {
+            for (int j = field.teams[i].units.Count - 1; 0 <= j; j--)
+                if (field.teams[i].units[i].isDestroy == true)
+                {
+                    Object.Destroy(field.teams[i].units[i].gameObject);
+                    field.teams[i].units.RemoveAt(i);
+                }
+        }
 
         for (int i = fires.Count - 1; 0 <= i; i--)
             if (fires[i].isDestroy == true)

@@ -1,47 +1,27 @@
 using UnityEngine;
-using pixelflag.controller;
 
 public class RouteSeachTest : DIMonoBehaviour
 {
     [SerializeField]
-    private GameObject map;
-
-    private ControllerInput input;
-
-    private ObjectCollision objectCollision;
+    private FieldMapData mapData;
     private MapCollision mapCollision;
-
-    public CameraObject mainCamera;
-
-    void Awake()
-    {
-        Application.targetFrameRate = 60;
-    }
 
     private void Start()
     {
         Global.GlobalSetUp();
         Global.isDebugMode = true;
-
-        // key config;
-        input = new ControllerInput();
-        PcControl pckey = new PcControl();
-        pckey.P1Button1 = KeyCode.K;
-        pckey.P1Option2 = KeyCode.P;
-        input.SetPcConfig(GamePadNum.Gamepad1, pckey);
-
-        creater.CreatePlayer(new Vector3());
-        creater.CreateBuddies(BuddiesType.Knight, new Vector3());
-
-        objectCollision = new ObjectCollision();
-        objectCollision.Initialize();
+        Global.isShowCollision = false;
 
         mapCollision = new MapCollision();
 
-        mainCamera.Initialize();
-        mainCamera.SetTarget(objects.player.gameObject);
+        Team[] teams = new Team[]
+        {
+            new Team(0),
+            new Team(1),
+        };
 
-        // field.EnterMap(map.GetComponent<FieldMapData>());
+        field.CreateMap(teams, mapData);
+        field.AddUnit(UnitType.Knight, 0);
     }
 
     void FixedUpdate()
@@ -51,11 +31,13 @@ public class RouteSeachTest : DIMonoBehaviour
         objects.Execute();
         field.Execute();
 
-        mapCollision.Execute(field.map, objects);
-        objectCollision.Execute(objects);
+        mapCollision.Execute();
+
+        objects.ExecuteEvent();
 
         field.CheckEvent();
-
         objects.CheckDestroy();
+
+        Global.count++;
     }
 }

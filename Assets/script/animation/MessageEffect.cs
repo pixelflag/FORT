@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MessageEffect : MassObject
 {
@@ -18,12 +16,6 @@ public class MessageEffect : MassObject
         base.Initialize();
         view = GetComponent<VPixelObject>();
         view.Initialize();
-    }
-
-    public override void ResetObject()
-    {
-        count = 0;
-        base.ResetObject();
     }
 
     public override void Execute()

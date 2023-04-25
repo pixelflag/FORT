@@ -11,7 +11,7 @@ public static class BoxCollision
     public static CollisionResult BoxPositionCorrection(MassObject obj, Box[] boxes)
     {
         CollisionResult result = new CollisionResult();
-        Box box = obj.collision.GetBox();
+        Box box = obj.collision.box;
         box.position = obj.prevPosition;
 
         // X座標の補正

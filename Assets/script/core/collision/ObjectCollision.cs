@@ -2,114 +2,68 @@
 {
 	public void Initialize()
     {
-
+		// Empty
     }
 
-	public void Execute(ObjectExecutor objects)
+	public void Execute()
 	{
-		CheckPlayer(objects);
-		CheckBuddies(objects);
-		CheckEnemy(objects);
-		CheckFire(objects);
+		CheckUnit();
+		CheckFire();
 	}
 
-	private void CheckPlayer(ObjectExecutor objects)
+	private void CheckUnit()
     {
-		Player player = objects.player;
-		CollisionObject PCo = player.collision;
-		FieldMapObject area = field.map;
-
-		// player attack
-		if (player.weapon != null)
+		for (int i = 0; i < field.teams.Length-1; i++)
 		{
-			CollisionObject wc = player.weapon.collision;
-			AttackData ad = player.GetAttackData();
-
-			foreach (Enemy enemy in area.enemys)
+			for (int j = i+1; j < field.teams.Length; j++)
 			{
-				if (CheckCollision(wc, enemy.collision))
-					enemy.HitAttack(ad);
+                HitCkeck(field.teams[i], field.teams[j]);
 			}
 		}
 
-		// item
-		foreach (Item item in area.items)
-		{
-			if (CheckCollision(PCo, item.collision))
+		void HitCkeck(Team t1, Team t2)
+        {
+			for (int i = 0; i < t1.units.Count - 1; i++)
 			{
-				player.HitItem(item);
-				// item.Open();
+				if (t1.units[i].weapon != null)
+				{
+					CollisionObject co1 = t1.units[i].weapon.collision;
+
+					for (int j = i + 1; j < t2.units.Count; j++)
+					{
+						if (CheckCollision(co1, t2.units[i].collision))
+							t2.units[i].HitAttack(t1.units[i].GetAttackData());
+					}
+				}
 			}
 		}
 	}
 
-    private void CheckBuddies(ObjectExecutor objects)
-    {
-		FieldMapObject area = field.map;
+	private void CheckFire()
+	{
+		// 後で考えよ
 
-		foreach (Character buddie in objects.buddies)
-		{
-			if (buddie.weapon != null)
+		/*
+			FieldMapObject area = field.map;
+
+			foreach (FireObject fire in objects.fires)
 			{
-				CollisionObject RwCo = buddie.weapon.collision;
-				AttackData ad = buddie.GetAttackData();
+				CollisionObject FrCo = fire.collision;
+				AttackData ad = fire.GetAttackData();
 
-				// enemy
+				// Fireは点で評価したほうがいいかもなあ。
 				foreach (Enemy enemy in area.enemys)
 				{
-					if (CheckCollision(RwCo, enemy.collision))
+					if (CheckCollision(FrCo, enemy.collision))
+					{
+						fire.Hit();
 						enemy.HitAttack(ad);
+						break;
+					}
 				}
+				if (fire.isDestroy) continue;
 			}
-		}
-	}
-
-	private void CheckEnemy(ObjectExecutor objects)
-    {
-		Player player = objects.player;
-		CollisionObject PCo = player.collision;
-		FieldMapObject map = field.map;
-
-		foreach (Enemy enemy in map.enemys)
-		{
-			// weaponを持たずに体当たりしかない可能性がある。
-			// 敵をデザインするときに再設計する。
-
-			AttackData EAo = enemy.GetAttackData();
-			CollisionObject Eco = enemy.collision;
-
-			if (CheckCollision(Eco, PCo))
-				player.HitAttack(EAo);
-
-			foreach (Character buddie in objects.buddies)
-			{
-				if (CheckCollision(Eco, buddie.collision))
-					buddie.HitAttack(EAo);
-			}
-		}
-	}
-
-	private void CheckFire(ObjectExecutor objects)
-	{
-		FieldMapObject area = field.map;
-
-		foreach (FireObject fire in objects.fires)
-		{
-			CollisionObject FrCo = fire.collision;
-			AttackData ad = fire.GetAttackData();
-
-			// Fireは点で評価したほうがいいかもなあ。
-			foreach (Enemy enemy in area.enemys)
-			{
-				if (CheckCollision(FrCo, enemy.collision))
-				{
-					fire.Hit();
-					enemy.HitAttack(ad);
-					break;
-				}
-			}
-			if (fire.isDestroy) continue;
-		}
+		*/
 	}
 
 	// ------
@@ -118,7 +72,7 @@
 	{
 		if (!objA.objectCollisionDisabled && !objB.objectCollisionDisabled)
 		{
-			if (BoxCollision.BoxHitCheck(objA.GetBox(), objB.GetBox()))
+			if (BoxCollision.BoxHitCheck(objA.box, objB.box))
 			{
 				return true;
 			}

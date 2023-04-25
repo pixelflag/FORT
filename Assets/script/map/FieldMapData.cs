@@ -33,7 +33,7 @@ public class FieldMapData : MonoBehaviour
     private Tilemap _groundMap = default;
     public Tilemap groundMap => _groundMap;
 
-    public MapEnemyData[] enemys;
+    public MapUnitData[] units;
     public MapEventData[] events;
     public MapEntranceData[] entrance;
 
@@ -58,17 +58,17 @@ public class FieldMapData : MonoBehaviour
             Debug.Log("The collisionmap is not centered.");
 
         // Enemy & Event ----------
-        List<MapEnemyData> tempEnemyList = new List<MapEnemyData>();
+        List<MapUnitData> tempEnemyList = new List<MapUnitData>();
         List<MapEventData> tempEventList = new List<MapEventData>();
 
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject obj = transform.GetChild(i).gameObject;
-            MapEnemyData en = obj.GetComponent<MapEnemyData>();
-            if (en != null)
+            MapUnitData unit = obj.GetComponent<MapUnitData>();
+            if (unit != null)
             {
-                en.name = en.enemyName.ToString();
-                tempEnemyList.Add(en);
+                unit.name = unit.unitType.ToString() + "_" + unit.teamID.ToString();
+                tempEnemyList.Add(unit);
             }
 
             MapEventData eo = obj.GetComponent<MapEventData>();
@@ -76,7 +76,7 @@ public class FieldMapData : MonoBehaviour
                 tempEventList.Add(eo);
         }
 
-        enemys = tempEnemyList.ToArray();
+        units = tempEnemyList.ToArray();
         events = tempEventList.ToArray();
 
         int length = areaSize.x * areaSize.y;

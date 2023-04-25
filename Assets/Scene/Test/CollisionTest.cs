@@ -29,10 +29,9 @@ public class CollisionTest : DIMonoBehaviour
          * 使えなくなったので、必要な時に直して使用する。
         RouteSearch routeSearch = new RouteSearch();
         routeSearch.SetMap(map.topRight, map.bottomLeft, map.collisionMap);
+        creater.CreatePlayer(new Vector3());
         */
 
-        creater.CreatePlayer(new Vector3());
-        creater.CreateEnemy(EnemyName.Slime, new Vector3( 50,  50, 0));
     }
 
     void FixedUpdate()
@@ -41,8 +40,8 @@ public class CollisionTest : DIMonoBehaviour
 
         objects.Execute();
         
-        objectCollision.Execute(objects);
-        mapCollision.Execute(field.map, objects);
+        objectCollision.Execute();
+        mapCollision.Execute();
 
         objects.CheckDestroy();
     }

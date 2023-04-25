@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using pixelflag.UI;
@@ -11,10 +10,11 @@ public abstract class WMotionBase : MonoBehaviour
     protected MotionData[] data = default;
     [SerializeField]
     private int _extends = 8;
-    public int extends { get { return _extends; } }
+    public int extends => _extends;
+
     [SerializeField]
     private bool _collisionDisable = false;
-    public bool collisionDisable { get { return _collisionDisable; } }
+    public bool collisionDisable => _collisionDisable;
 
     // ‚±‚±‚ÉŽè‚ðo‚·‚Ì‚Í•Û—¯‚µ‚æ‚¤B
     // ‘®«ˆ—‚ðæ‚É‚â‚éB

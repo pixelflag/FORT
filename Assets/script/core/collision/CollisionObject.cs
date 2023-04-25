@@ -7,30 +7,17 @@ public class CollisionObject
     // 地形のコリジョンを無効にする
     public bool mapCollisionDisabled = false;
 
-    public Transform transform { get; private set; }
+    private Transform transform;
+    public Vector3 position => transform.position;
     private int extends = 8;
 
-    public Vector3 position { get { return transform.position; } }
+    public Box box => new Box(transform.position, extends, extends);
+    public int radius => extends;
 
-    public CollisionObject(Transform transform)
+    public CollisionObject(Transform transform, int extends)
     {
         this.transform = transform;
-    }
-
-    public void ResetObject()
-    {
-        objectCollisionDisabled = false;
-        mapCollisionDisabled = false;
-    }
-
-    public Box GetBox()
-    {
-        return new Box(transform.position,extends,extends);
-    }
-
-    public int GetRadius()
-    {
-        return extends;
+        this.extends = extends;
     }
 
     public void SetExtends(int extends)

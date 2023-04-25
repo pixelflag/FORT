@@ -11,105 +11,72 @@ public class ObjectCreater : DIMonoBehaviour
     }
 
     [SerializeField]
+    private Unit unitPrefab = default;
+
+    [SerializeField]
     private ObjectLibrary ObjectLib = default;
     [SerializeField]
-    private EnemyLibrary enemyLib = default;
-    [SerializeField]
-    private CharacterSkinLibrary characterSkinLib = default;
+    private UnitSkinLibrary unitSkinLib = default;
     [SerializeField]
     private MapSpriteLibrary mapSpriteLib = default;
     [SerializeField]
     private WeaponLibrary weaponLib = default;
 
-    public Player CreatePlayer(Vector3 position)
-    {
-        GameObject obj = Instantiate(ObjectLib.player);
-        Player pl = obj.GetComponent<Player>();
-        pl.Initialize();
-        pl.position = position;
-        pl.SetSkin(characterSkinLib.Get(0));
-        pl.SetWeapon(CreateWeapon(pl, 0));
-        pl.OnCharacterDead += (Character character) =>
-        {
-            sound.PlayOneShotOnChannel(1, SeType.ReatinerDead, 1);
-        };
-
-        objects.player = pl;
-        return pl;
-    }
-
-    public Buddies CreateBuddies(BuddiesType type, Vector3 position)
+    public Unit CreateUnit(UnitType type, int teamID, Vector3 position)
     {
         switch (type)
         {
-            case BuddiesType.Knight:     return Create(0, 0);
-            case BuddiesType.Soldier:    return Create(1, 1);
-            case BuddiesType.Elf:        return Create(2, 2);
-            case BuddiesType.RedWizard:  return Create(3, 3);
-            case BuddiesType.BlueWizard: return Create(4, 4);
-            case BuddiesType.Lumberjack: return Create(5, 5);
-            case BuddiesType.Dwarves:    return Create(6, 6);
-            case BuddiesType.Thief:      return Create(7, 7);
+            case UnitType.Knight:     return Create(0, 0);
+            case UnitType.Soldier:    return Create(1, 1);
+            case UnitType.Elf:        return Create(2, 2);
+            case UnitType.RedWizard:  return Create(3, 3);
+            case UnitType.BlueWizard: return Create(4, 4);
+            case UnitType.Lumberjack: return Create(5, 5);
+            case UnitType.Dwarves:    return Create(6, 6);
+            case UnitType.Thief:      return Create(7, 7);
             default:
                 throw new System.Exception("Failed to generate. : " + type);
         }
 
-        Buddies Create(int skinID, int weapomID)
+        Unit Create(int skinID, int weapomID)
         {
-            Buddies obj = Instantiate(ObjectLib.buddies).GetComponent<Buddies>();
-            obj.Initialize(type, objects.player);
-            obj.position = position;
-            obj.OnCharacterDead += (Character character) =>
+            Unit unit = Instantiate(unitPrefab).GetComponent<Unit>();
+            unit.Initialize(type, teamID);
+            unit.position = position;
+            unit.OnDead += (Unit u) =>
             {
+                // とりあえずこのエフェクトを採用しておく。
                 creater.CreateMessageEffect(MessageEffectName.Angel, position);
                 sound.PlayOneShotOnChannel(1, SeType.ReatinerDead, 1);
-                obj.ObjectDestroy();
+                unit.ObjectDestroy();
             };
 
-            CharacterTrackRouteMove logic = new CharacterTrackRouteMove();
-            logic.Initialize(obj, 64);
-            obj.moveLogic = logic;
+            unit.view.SetSkin(unitSkinLib.Get(skinID));
+            unit.SetWeapon(CreateWeapon(unit, weapomID));
 
-            obj.SetSkin(characterSkinLib.Get(skinID));
-            obj.SetWeapon(CreateWeapon(obj, weapomID));
-
-            objects.buddies.Add(obj);
-
-            return obj;
+            return unit;
         }
     }
 
-    public Weapon CreateWeapon(Character master, int weapomID)
+    public Weapon CreateWeapon(Unit master, int weapomID)
     {
         Weapon wp = Instantiate(ObjectLib.weapon);
-        WeaponParameters wpp = data.unit.weaponData[weapomID];
+        WeaponData wpp = data.weaponData[weapomID];
         wp.Initialize(master, wpp, weaponLib.GetMotion(wpp.type), weaponLib.GetSkin(wpp.type, wpp.skinID));
         return wp;
     }
 
-    public Enemy CreateEnemy(EnemyName name, Vector3 position)
+    public FireObject CreateFire(FireData fireData, Vector3 position)
     {
-        Enemy enemy = enemyLib.CreateEnemy(name);
-        enemy.position = position;
-        enemy.OnEnemyDead += (Enemy enemy) =>
-        {
-            creater.CreateMessageEffect(MessageEffectName.Devil, position);
-            sound.PlayOneShotOnChannel(1, SeType.EnemyDead, 1);
-        };
-        return enemy;
-    }
-
-    public FireObject CreateFire(ObjectType cType, WeaponParameters wpp, Vector3 position, Direction4Type direction, int AttackPower)
-    {
-        switch (wpp.type)
+        switch (fireData.weapon.type)
         {
             case WeaponType.Bow: return Create(0);
             case WeaponType.Rod:
-                switch (wpp.element)
+                switch (fireData.weapon.element)
                 {
                     case ElementType.Fire: return Create(1);
                     case ElementType.Ice:  return Create(2);
-                    default: throw new System.Exception("element not found. : " + wpp.element);
+                    default: throw new System.Exception("element not found. : " + fireData.weapon.element);
                 }
             case WeaponType.Sword:
             case WeaponType.Axe:
@@ -120,13 +87,13 @@ public class ObjectCreater : DIMonoBehaviour
                 // かまいたちが発生
             case WeaponType.Hammer:
                 // 衝撃波が発生
-            default: throw new System.Exception("type not found. : " + wpp.type);
+            default: throw new System.Exception("type not found. : " + fireData.weapon.type);
         }
 
         FireObject Create(int index)
         {
             FireObject fr = Instantiate(ObjectLib.fires[index]);
-            fr.Initialize(cType, wpp, direction, AttackPower);
+            fr.Initialize(fireData);
             fr.position = position;
             objects.fires.Add(fr);
             return fr;
@@ -177,34 +144,21 @@ public class ObjectCreater : DIMonoBehaviour
         return effect;
     }
 
-    public MassObject Create(ObjectName objectName, Vector3 position)
+    public MassObject CreateEffect(EffectName name, Vector3 position)
     {
-        switch (objectName)
+        switch (name)
         {
-            case ObjectName.EffectBattleEffect:
+            case EffectName.EffectBattleEffect:
                 // エフェクトは再設計が必要。
                 MassObject ms = Instantiate(ObjectLib.battelEffect).GetComponent<MassObject>();
                 ms.position = position;
                 objects.effects.Add(ms);
                 return ms;
 
-            case ObjectName.ItemStatue:
+            case EffectName.ItemStatue:
             default:
-                throw new System.Exception("Failed to generate. " + objectName);
+                throw new System.Exception("Failed to generate. " + name);
         }
-    }
-
-    
-    public Item CreateItem()
-    {
-        // 未実装。
-        /*
-        Statue stt = Instantiate(ObjectLib.statue).GetComponent<Statue>();
-        stt.Initialize(objectName, position);
-        return stt;
-        */
-
-        return null;
     }
 
     // Debug

@@ -1,23 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FireObject : MassObject
 {
-    public ObjectType type { get; private set; }
-    public WeaponParameters weapon { get; private set; }
-    public int attackPower { get; private set; }
-    public Direction4Type direction { get; private set; }
 
-    public virtual void Initialize(ObjectType type, WeaponParameters weapon, Direction4Type direction, int attackPower)
+    public FireData fireData { get; private set; }
+
+    public virtual void Initialize(FireData fireData)
     {
         base.Initialize();
-        this.type = type;
-        this.weapon = weapon;
-        this.attackPower = attackPower;
-        this.direction = direction;
+        this.fireData = fireData;
 
-        switch (direction)
+        switch (fireData.direction)
         {
             case Direction4Type.Up:
                 _force = new Vector2( 0, 1);
@@ -38,8 +31,8 @@ public class FireObject : MassObject
     {
         AttackData ad = new AttackData();
         ad.position = position;
-        ad.power = attackPower;
-        ad.weapon = weapon;
+        ad.power = fireData.attackPower;
+        ad.weapon = fireData.weapon; // IDでマスターから引っ張るべきものでは？
         return ad;
     }
 
@@ -47,4 +40,18 @@ public class FireObject : MassObject
     {
         ObjectDestroy();
     }
+}
+
+public struct FireData
+{
+    public FireType fireType;
+    public int teamID;
+    public WeaponData weapon;
+    public int attackPower;
+    public Direction4Type direction;
+}
+
+public enum FireType
+{
+    Fire
 }

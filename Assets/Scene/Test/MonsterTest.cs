@@ -23,11 +23,10 @@ public class MonsterTest : DIMonoBehaviour
         mapCollision = new MapCollision();
 
         // ----------
-        creater.CreatePlayer(new Vector3());
         // creater.CreateEnemy(EnemyName.Slime, new Vector3(100, 100, 0));
 
-        mainCamera.Initialize();
-        mainCamera.SetTarget(objects.player.gameObject);
+        // mainCamera.Initialize();
+        // mainCamera.SetTarget(objects.player.gameObject);
 
         //Player player = objects.player;
         //player.position = mapEntrance.position;
@@ -44,8 +43,8 @@ public class MonsterTest : DIMonoBehaviour
         objects.Execute();
         field.Execute();
 
-        mapCollision.Execute(field.map, objects);
-        objectCollision.Execute(objects);
+        mapCollision.Execute();
+        objectCollision.Execute();
 
         // ダメージイベント処理
 

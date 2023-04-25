@@ -15,7 +15,10 @@ public class PlayerTest : DIMonoBehaviour
     private void Start()
     {
         Global.GlobalSetUp();
-        creater.CreatePlayer(new Vector3());
+
+
+        // 見直し
+        // creater.CreatePlayer(new Vector3());
     }
 
     void FixedUpdate()

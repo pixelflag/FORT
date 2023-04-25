@@ -9,12 +9,12 @@ public class FieldControl : DIMonoBehaviour
         cameraObject = Camera.main.GetComponent<CameraObject>();
     }
 
-    public FieldMapObject map { get; private set; }
-
     [SerializeField]
     private FieldDataLiblary fieldLibrary = default;
+    public FieldMapObject map { get; private set; }
 
     private CameraObject cameraObject;
+    public Team[] teams;
 
     private State state;
     private enum State
@@ -35,29 +35,48 @@ public class FieldControl : DIMonoBehaviour
         }
     }
 
+    public Unit AddUnit(UnitType type, int teamID)
+    {
+        // とりあえず。エントリーポイントの仕様はあとで考える。
+
+        var ent = map.GetEntrance(0);
+        Unit unit = creater.CreateUnit(type, teamID, ent.position);
+        unit.SetDirection(ent.direction);
+        unit.OnDestroy += (MassObject mo) =>
+        {
+            teams[unit.teamID].units.Remove(unit);
+        };
+        teams[unit.teamID].units.Add(unit);
+
+        // 動作ロジックの選択
+        if(false)
+        {
+            // CharacterTrackRouteMove logic = new CharacterTrackRouteMove();
+            // logic.Initialize(unit, 64);
+            // unit.SetController(logic);
+        }
+        else
+        {
+            unit.SetController(new UnitController());
+        }
+
+        return unit;
+    }
+
     public void CheckDestroy()
     {
         map.CheckDestroy();
     }
 
-    public void CreateMap(FieldMapName toMapName)
+    public void CreateMap(Team[] teams, FieldMapName toMapName)
     {
-        CreateMap(fieldLibrary.GetFieldMapData(toMapName));
+        CreateMap(teams, fieldLibrary.GetFieldMapData(toMapName));
     }
 
-    public void SpawnPlayer()
+    public void CreateMap(Team[] teams, FieldMapData mapData)
     {
-        // とりあえず
+        this.teams = teams;
 
-        if (map == null) return;
-        Player player = creater.CreatePlayer(new Vector3());
-        var ent = map.GetEntrance(0);
-        player.position = ent.position;
-        player.SetDirection(ent.direction);
-    }
-
-    public void CreateMap(FieldMapData mapData)
-    {
         if (map != null)
             Destroy(map.gameObject);
 
@@ -69,10 +88,12 @@ public class FieldControl : DIMonoBehaviour
     }
 
     // Event -----------
-
     public void CheckEvent()
     {
-        Vector2 pPos = objects.player.position;
+        /*
+        // イベントに誰が対象になるのかが不明確なので保留
+        //Vector2 pPos = objects.player.position;
+
         // Event
         foreach (MapEventObject ev in map.events)
         {
@@ -85,6 +106,7 @@ public class FieldControl : DIMonoBehaviour
                 break;
             }
         }
+        */
     }
 
     public delegate void EventHitDelegate(string eventName);
