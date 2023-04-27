@@ -787,6 +787,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: system_location
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 123
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5ee86d373fff44db369c3c1541122b
+      internalID: -546806618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -819,6 +840,7 @@ TextureImporter:
       system_life_9: -8854212264851917286
       mapGrid1: -704235928200180089
       mapGrid4: 8136167463020123562
+      system_location: -546806618
       mapGrid3: -8607831309750797696
       system_life_40: -6403802054100971300
       system_ball_green: 1075851050360299123

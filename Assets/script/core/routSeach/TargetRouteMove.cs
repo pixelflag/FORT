@@ -3,17 +3,17 @@
 public class TargetRouteMove
 {
     private int routeIndex;
-    private RouteArray routes;
+    public FixedArray<Vector2> routes { get; private set; }
 
     private float goalDistance = 16;
 
     private Vector2 targetPos;
-    public Vector3 direction { get; private set; }
+    public Vector2 vector { get; private set; }
     public bool isGoal { get; private set; }
 
     public void Initialize()
     {
-        routes = new RouteArray(RouteSearch.searchLimit);
+        routes = new FixedArray<Vector2>(RouteSearch.searchLimit);
         routeIndex = 0;
         isGoal = true;
         targetPos = new Vector2();
@@ -34,7 +34,7 @@ public class TargetRouteMove
             case RouteSearchResult.Goal:
                 isGoal = false;
                 routeIndex = 0;
-                targetPos = SeachNextHalfTarget(routeIndex);
+                targetPos = SeachNextHalfTarget(0,1);
                 routeIndex++;
                 break;
         }
@@ -43,20 +43,22 @@ public class TargetRouteMove
 
     public void Execute(Vector2 currentPosition)
     {
-        if(routes.Length == 0) isGoal = true;
+        if(routes.length == 0) isGoal = true;
 
         if (!isGoal)
         {
-            direction = Calculate.PositionToNomaliseVector(currentPosition, targetPos);
+            vector = Calculate.PositionToNomaliseVector(currentPosition, targetPos);
             if ((targetPos - currentPosition).sqrMagnitude < goalDistance)
             {
-                if (routes.Length <= routeIndex)
+                if (routes.length <= routeIndex)
                 {
                     isGoal = true;
+                    vector = new Vector2();
                 }
                 else
                 {
-                    targetPos = SeachNextHalfTarget(routeIndex);
+                    int nextIndex = routes.length <= routeIndex + 1 ? routeIndex : routeIndex + 1;
+                    targetPos = SeachNextHalfTarget(routeIndex, nextIndex);
                     routeIndex++;
                 }
             }
@@ -64,13 +66,11 @@ public class TargetRouteMove
     }
 
     // 配列内の今と次のターゲットの間を追う
-    private Vector3 SeachNextHalfTarget(int index)
+    public Vector3 SeachNextHalfTarget(int index, int nextIndex)
     {
-        Vector3 p1 = routes.GetPosition(index);
-        Vector3 p2 = routes.GetPosition((routes.Length > routeIndex + 1)? index + 1: index);
+        Vector3 p1 = routes.Get(index);
+        Vector3 p2 = routes.Get(nextIndex);
         Vector3 p3 = (p2 - p1) / 2 + p1;
-        p3.x += Global.gridSize.x / 2;
-        p3.y += Global.gridSize.y / 2;
 
         return p3;
     }

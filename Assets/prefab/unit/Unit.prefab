@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1459d4bafa09f42a8f9b58afba0d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accele: 0.3
-  friction: 0.2
+  accele: 0.8
+  friction: 0.5
   collisionSize: 16
 --- !u!114 &6058235410974332335
 MonoBehaviour:
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3ca61b48b7e684bbbb457dc77cc44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gaugePrefav: {fileID: 0}
 --- !u!212 &3576076780482016233
 SpriteRenderer:
   m_ObjectHideFlags: 0

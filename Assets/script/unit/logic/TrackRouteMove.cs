@@ -67,7 +67,7 @@ public class TrackRouteMove
             case State.Walk:
                 count++;
                 targetRouteMove.Execute(self.position);
-                self.SetVector(new Vector2(targetRouteMove.direction.x, targetRouteMove.direction.y));
+                self.SetVector(new Vector2(targetRouteMove.vector.x, targetRouteMove.vector.y));
 
                 if (targetRouteMove.isGoal || count > 180)
                 {

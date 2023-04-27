@@ -58,6 +58,7 @@ MonoBehaviour:
     type: 3}
   DebugSprites:
   - {fileID: -4900796950499514941, guid: 56b02a55a58888d479d44a593921955e, type: 3}
+  - {fileID: -546806618, guid: 56b02a55a58888d479d44a593921955e, type: 3}
   DebugArrow:
   - {fileID: 7434870685880743829, guid: 56b02a55a58888d479d44a593921955e, type: 3}
   - {fileID: -6088974121743375344, guid: 56b02a55a58888d479d44a593921955e, type: 3}

@@ -21,10 +21,14 @@ public class RouteSeachTest : DIMonoBehaviour
         };
 
         field.CreateMap(teams, mapData);
-        field.AddUnit(UnitType.Knight, 0);
+        Unit unit = field.AddUnit(UnitType.Knight, 0);
+
+        CameraObject mainCamera = Camera.main.GetComponent<CameraObject>();
+        mainCamera.Initialize();
+        mainCamera.SetTarget(unit.gameObject);
     }
 
-    void FixedUpdate()
+    private void Update()
     {
         Global.input.Update();
 

@@ -4,9 +4,9 @@ using UnityEngine;
 public class Unit : MassObject
 {
     [SerializeField]
-    private float speed = 1.0f;
+    private float accele = 1.0f;
     [SerializeField]
-    private float friction = 0.2f;
+    private float friction = 0.9f;
     [SerializeField]
     private int collisionSize = 16;
 
@@ -78,9 +78,8 @@ public class Unit : MassObject
     public void SetVector(Vector2 vector)
     {
         if (vector.x == 0 && vector.y == 0) return;
-
-        _vector = vector;
-        direction.SetGoing(vector.x, vector.y);
+        direction.SetLooking(vector.x, vector.y);
+        _vector += vector * accele;
     }
 
     public override void Execute()
@@ -90,11 +89,10 @@ public class Unit : MassObject
 
         if (controller != null) controller.Execute();
 
-        x += (_vector.x * speed) + _force.x;
-        y += (_vector.y * speed) + _force.y;
+        x += _vector.x + _force.x;
+        y += _vector.y + _force.y;
 
-        _vector.x = 0;
-        _vector.y = 0;
+        _vector = _vector * friction;
 
         z = y;
 

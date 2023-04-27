@@ -6,6 +6,20 @@ public static class DebugUtility
 {
     private static int sortingOrder = 10;
 
+    public static GameObject AddLocator(Vector2 position)
+    {
+        GameObject newObj = new GameObject("Locator");
+
+        SpriteRenderer render = newObj.AddComponent<SpriteRenderer>();
+        render.drawMode = SpriteDrawMode.Sliced;
+        render.sprite = ObjectCreater.instance.GetDebugSprite(1);
+        render.sortingOrder = sortingOrder;
+
+        newObj.transform.position = position;
+
+        return newObj;
+    }
+
     public static GameObject AddBoxView(Box box)
     {
         GameObject newObj = new GameObject("DebugBox");

@@ -8,21 +8,21 @@ public static class RouteSearch
     private static FixedArray<Vector2Int> tempRoutes;
     private static List<CellScore> scoreList;
 
-    private static Vector3Int[] aroundOffset =
+    private static Vector2Int[] aroundOffset =
     {
-        new Vector3Int( 0, 0, 0),
-        new Vector3Int( 0, 1, 0),
-        new Vector3Int( 1, 0, 0),
-        new Vector3Int( 0,-1, 0),
-        new Vector3Int(-1, 0, 0),
-        new Vector3Int( 1, 1, 0),
-        new Vector3Int( 1,-1, 0),
-        new Vector3Int(-1,-1, 0),
-        new Vector3Int(-1, 1, 0),
-        new Vector3Int( 0, 2, 0),
-        new Vector3Int( 2, 0, 0),
-        new Vector3Int( 0,-2, 0),
-        new Vector3Int(-2, 0, 0),
+        new Vector2Int( 0, 0),
+        new Vector2Int( 0, 1),
+        new Vector2Int( 1, 0),
+        new Vector2Int( 0,-1),
+        new Vector2Int(-1, 0),
+        new Vector2Int( 1, 1),
+        new Vector2Int( 1,-1),
+        new Vector2Int(-1,-1),
+        new Vector2Int(-1, 1),
+        new Vector2Int( 0, 2),
+        new Vector2Int( 2, 0),
+        new Vector2Int( 0,-2),
+        new Vector2Int(-2, 0),
     };
 
     public static void Initialize()
@@ -31,7 +31,11 @@ public static class RouteSearch
         scoreList = new List<CellScore>();
     }
 
-    public static RouteSearchResult Search(FieldMapObject map, RouteArray routes, Vector3 startPosition, Vector3 targetPosition)
+    public static RouteSearchResult Search(
+        FieldMapObject map,
+        FixedArray<Vector2> routes,
+        Vector3 startPosition,
+        Vector3 targetPosition)
     {
         routes.Clear();
 
@@ -42,7 +46,7 @@ public static class RouteSearch
         // 初期位置がマップ外にはみ出したら終了
         if (!map.ExistsCellData(currentLocation)) 
         {
-            routes.AddRoute(startPosition);
+            routes.Add(startPosition);
             return RouteSearchResult.OutOfField;
         }
 
@@ -57,11 +61,25 @@ public static class RouteSearch
 
         // 目的地を安全な場所に修正
         targetLocation = SearchSafeCell(targetLocation);
+        Vector2Int SearchSafeCell(Vector2Int location)
+        {
+            for (int i = 0; i < aroundOffset.Length; i++)
+            {
+                Vector2Int newloc = location + aroundOffset[i];
+                if (map.ExistsCellData(newloc))
+                {
+                    Cell cell = map.GetCell(newloc);
+                    if (!cell.isCollision)
+                        return newloc;
+                }
+            }
+            return location;
+        }
 
         // 現在位置と目標位置が一緒の場合は終了。
         if (targetLocation == currentLocation)
         {
-            routes.AddRoute(targetPosition);
+            routes.Add(targetPosition);
             return RouteSearchResult.StartingPosition;
         }
 
@@ -148,25 +166,8 @@ public static class RouteSearch
             }
         }
 
-        Vector2Int SearchSafeCell(Vector2Int location)
-        {
-            foreach (Vector2Int offset in aroundOffset)
-            {
-                Vector2Int newloc = location + offset;
-                if (map.ExistsCellData(newloc))
-                {
-                    Cell cell = map.GetCell(newloc);
-                    if (!cell.isCollision)
-                    {
-                        return newloc;
-                    }
-                }
-            }
-            return location;
-        }
-
         // スコアを元にルート座標を抽出していく
-        void ExtractRoute(CellScore startCell, RouteArray routes)
+        void ExtractRoute(CellScore startCell, FixedArray<Vector2> routes)
         {
             int count = 0;
             tempRoutes.Clear();
@@ -183,11 +184,12 @@ public static class RouteSearch
             }
 
             // 配列を反転
-            for (int i = tempRoutes.Length - 1; i >= 0; i--)
+
+            for (int i = tempRoutes.length - 1; i >= 0; i--)
             {
                 Vector2Int r = tempRoutes.Get(i);
                 Vector3 pos = MapUtility.LocationToPosition(r);
-                routes.AddRoute(pos);
+                routes.Add(pos);
             }
         }
     }

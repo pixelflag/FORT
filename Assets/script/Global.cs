@@ -3,8 +3,8 @@ using pixelflag.controller;
 
 public static class Global
 {
-    public static int screenWidth = 640;
-    public static int screenHeight = 480;
+    public static int screenWidth = 320;
+    public static int screenHeight = 240;
 
     public static Vector2Int gridSize = new Vector2Int(16,16);
 
