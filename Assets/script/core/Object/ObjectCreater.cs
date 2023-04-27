@@ -12,6 +12,8 @@ public class ObjectCreater : DIMonoBehaviour
 
     [SerializeField]
     private Unit unitPrefab = default;
+    [SerializeField]
+    private LifeGauge lifeGaugePrefav = default;
 
     [SerializeField]
     private ObjectLibrary ObjectLib = default;
@@ -159,6 +161,13 @@ public class ObjectCreater : DIMonoBehaviour
             default:
                 throw new System.Exception("Failed to generate. " + name);
         }
+    }
+
+    public LifeGauge CreateLifeGauge(Transform parent)
+    {
+        var lifeGauge = Instantiate(lifeGaugePrefav).GetComponent<LifeGauge>();
+        lifeGauge.Initialize(parent, new Vector3(0, 12, 0));
+        return lifeGauge;
     }
 
     // Debug

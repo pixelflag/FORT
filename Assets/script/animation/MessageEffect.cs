@@ -20,9 +20,9 @@ public class MessageEffect : MassObject
 
     public override void Execute()
     {
-        _speed.y += upPower;
+        _vector.y += upPower;
 
-        y += _speed.y;
+        y += _vector.y;
 
         base.Execute();
         view.Draw();

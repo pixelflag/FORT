@@ -13,7 +13,7 @@ public class TargetRouteMove
 
     public void Initialize()
     {
-        routes = new RouteArray(RouteSearch.GetSeachLimit());
+        routes = new RouteArray(RouteSearch.searchLimit);
         routeIndex = 0;
         isGoal = true;
         targetPos = new Vector2();

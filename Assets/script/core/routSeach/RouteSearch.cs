@@ -3,8 +3,8 @@ using UnityEngine;
 
 public static class RouteSearch
 {
-    private static int searchLimit = 128;
-    public static int GetSeachLimit() { return searchLimit; }
+    private static int _searchLimit = 128;
+    public static int searchLimit => _searchLimit;
     private static FixedArray<Vector2Int> tempRoutes;
     private static List<CellScore> scoreList;
 
@@ -27,7 +27,7 @@ public static class RouteSearch
 
     public static void Initialize()
     {
-        tempRoutes = new FixedArray<Vector2Int>(searchLimit);
+        tempRoutes = new FixedArray<Vector2Int>(_searchLimit);
         scoreList = new List<CellScore>();
     }
 

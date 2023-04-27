@@ -25,7 +25,7 @@ public class BattleLogic : DI
 
     public void Execute()
     {
-        for (int i = damageEvents.Count - 1; i < 0; i--)
+        for (int i = damageEvents.Count - 1; 0 <= i; i--)
         {
             damageEvents[i].CountDown();
             if (damageEvents[i].isZeroWait)

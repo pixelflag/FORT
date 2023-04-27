@@ -44,11 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae76fed668dbc5e4196b9d459a296421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 8934529389566585844, guid: b9db8c30b1f6bca4abcc037ba8a2bae3,
+    type: 3}
+  lifeGaugePrefav: {fileID: 5911727492327686170, guid: 86199a0cb4faa264a88c3912a11a3b39,
+    type: 3}
   ObjectLib: {fileID: 3212912232135344646, guid: 557729a4f690ea84783c4f01752a0fe3,
     type: 3}
-  enemyLib: {fileID: 3687002971073685105, guid: e9936f257204e224591a3e925b06a364,
-    type: 3}
-  characterSkinLib: {fileID: 4987017521720812, guid: c193f883177b81145a86bc318d47f5e5,
+  unitSkinLib: {fileID: 4987017521720812, guid: c193f883177b81145a86bc318d47f5e5,
     type: 3}
   mapSpriteLib: {fileID: 6428230674136842321, guid: fb72641a04e27dd4c8d2d32c5280ee73,
     type: 3}

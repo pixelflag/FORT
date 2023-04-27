@@ -5047,9 +5047,9 @@ MonoBehaviour:
     type: 3}
   _mapName: 0
   _areaSize: {x: 40, y: 30}
-  _collisionMap: {fileID: 0}
-  _groundMap: {fileID: 0}
-  enemys:
+  _collisionMap: {fileID: 6975544310686274886}
+  _groundMap: {fileID: 8814818180976455775}
+  units:
   - {fileID: 4068457628551745325}
   - {fileID: 6859013615523301476}
   - {fileID: 1868109716350268724}
@@ -5544,11 +5544,11 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_2
-    type: 0
+    type: 1
     location: {x: 1, y: 2}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_2_2
     type: 0
     location: {x: 2, y: 2}
@@ -5568,11 +5568,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_5_2
-    type: 0
+    type: 4
     location: {x: 5, y: 2}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_6_2
     type: 0
     location: {x: 6, y: 2}
@@ -5586,11 +5586,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_8_2
-    type: 1
+    type: 0
     location: {x: 8, y: 2}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_9_2
     type: 0
     location: {x: 9, y: 2}
@@ -5640,23 +5640,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_17_2
-    type: 0
+    type: 3
     location: {x: 17, y: 2}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_2
-    type: 0
+    type: 3
     location: {x: 18, y: 2}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_19_2
-    type: 0
+    type: 3
     location: {x: 19, y: 2}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_2
     type: 0
     location: {x: 20, y: 2}
@@ -5712,17 +5712,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_2
-    type: 1
+    type: 0
     location: {x: 29, y: 2}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_2
-    type: 1
+    type: 0
     location: {x: 30, y: 2}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_2
     type: 0
     location: {x: 31, y: 2}
@@ -5790,11 +5790,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_2_3
-    type: 1
+    type: 0
     location: {x: 2, y: 3}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_3_3
     type: 0
     location: {x: 3, y: 3}
@@ -5832,11 +5832,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_3
-    type: 1
+    type: 0
     location: {x: 9, y: 3}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_10_3
     type: 0
     location: {x: 10, y: 3}
@@ -5856,11 +5856,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_13_3
-    type: 0
+    type: 4
     location: {x: 13, y: 3}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_14_3
     type: 0
     location: {x: 14, y: 3}
@@ -5886,29 +5886,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_18_3
-    type: 1
+    type: 3
     location: {x: 18, y: 3}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_19_3
-    type: 0
+    type: 3
     location: {x: 19, y: 3}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_3
-    type: 0
+    type: 3
     location: {x: 20, y: 3}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_21_3
-    type: 0
+    type: 3
     location: {x: 21, y: 3}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_22_3
     type: 0
     location: {x: 22, y: 3}
@@ -5940,11 +5940,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_3
-    type: 1
+    type: 0
     location: {x: 27, y: 3}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_28_3
     type: 0
     location: {x: 28, y: 3}
@@ -5952,23 +5952,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_3
-    type: 1
+    type: 3
     location: {x: 29, y: 3}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_30_3
-    type: 1
+    type: 0
     location: {x: 30, y: 3}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_3
-    type: 0
+    type: 3
     location: {x: 31, y: 3}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_32_3
     type: 0
     location: {x: 32, y: 3}
@@ -6006,11 +6006,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_38_3
-    type: 1
+    type: 0
     location: {x: 38, y: 3}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_39_3
     type: 1
     location: {x: 39, y: 3}
@@ -6132,29 +6132,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_19_4
-    type: 0
+    type: 3
     location: {x: 19, y: 4}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_4
-    type: 0
+    type: 3
     location: {x: 20, y: 4}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_21_4
-    type: 0
+    type: 3
     location: {x: 21, y: 4}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_22_4
-    type: 0
+    type: 3
     location: {x: 22, y: 4}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_23_4
     type: 0
     location: {x: 23, y: 4}
@@ -6186,23 +6186,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_28_4
-    type: 0
+    type: 3
     location: {x: 28, y: 4}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_29_4
-    type: 1
+    type: 0
     location: {x: 29, y: 4}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_4
-    type: 1
+    type: 0
     location: {x: 30, y: 4}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_4
     type: 0
     location: {x: 31, y: 4}
@@ -6216,11 +6216,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_33_4
-    type: 0
+    type: 3
     location: {x: 33, y: 4}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_34_4
     type: 0
     location: {x: 34, y: 4}
@@ -6282,11 +6282,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_4_5
-    type: 1
+    type: 0
     location: {x: 4, y: 5}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_5_5
     type: 0
     location: {x: 5, y: 5}
@@ -6390,11 +6390,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_22_5
-    type: 0
+    type: 3
     location: {x: 22, y: 5}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_23_5
     type: 0
     location: {x: 23, y: 5}
@@ -6402,11 +6402,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_5
-    type: 1
+    type: 0
     location: {x: 24, y: 5}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_25_5
     type: 0
     location: {x: 25, y: 5}
@@ -6414,11 +6414,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_26_5
-    type: 0
+    type: 3
     location: {x: 26, y: 5}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_27_5
     type: 0
     location: {x: 27, y: 5}
@@ -6432,23 +6432,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_5
-    type: 1
+    type: 0
     location: {x: 29, y: 5}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_5
-    type: 1
+    type: 0
     location: {x: 30, y: 5}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_5
-    type: 0
+    type: 4
     location: {x: 31, y: 5}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_32_5
     type: 0
     location: {x: 32, y: 5}
@@ -6462,11 +6462,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_34_5
-    type: 1
+    type: 0
     location: {x: 34, y: 5}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_35_5
     type: 0
     location: {x: 35, y: 5}
@@ -6570,35 +6570,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_6
-    type: 1
+    type: 0
     location: {x: 12, y: 6}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_6
-    type: 1
+    type: 0
     location: {x: 13, y: 6}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_14_6
-    type: 1
+    type: 0
     location: {x: 14, y: 6}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_15_6
-    type: 1
+    type: 0
     location: {x: 15, y: 6}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_16_6
-    type: 1
+    type: 0
     location: {x: 16, y: 6}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_17_6
     type: 0
     location: {x: 17, y: 6}
@@ -6612,29 +6612,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_19_6
-    type: 0
+    type: 3
     location: {x: 19, y: 6}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_6
-    type: 0
+    type: 4
     location: {x: 20, y: 6}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_6
-    type: 0
+    type: 4
     location: {x: 21, y: 6}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_22_6
-    type: 0
+    type: 3
     location: {x: 22, y: 6}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_23_6
     type: 0
     location: {x: 23, y: 6}
@@ -6642,11 +6642,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_6
-    type: 0
+    type: 4
     location: {x: 24, y: 6}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_25_6
     type: 0
     location: {x: 25, y: 6}
@@ -6672,17 +6672,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_6
-    type: 1
+    type: 0
     location: {x: 29, y: 6}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_6
-    type: 1
+    type: 4
     location: {x: 30, y: 6}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 5
   - cellName: map_31_6
     type: 0
     location: {x: 31, y: 6}
@@ -6702,11 +6702,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_34_6
-    type: 0
+    type: 3
     location: {x: 34, y: 6}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_35_6
     type: 0
     location: {x: 35, y: 6}
@@ -6792,11 +6792,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_7
-    type: 1
+    type: 0
     location: {x: 9, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_10_7
     type: 0
     location: {x: 10, y: 7}
@@ -6810,41 +6810,41 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_7
-    type: 1
+    type: 0
     location: {x: 12, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_7
-    type: 1
+    type: 0
     location: {x: 13, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_14_7
-    type: 1
+    type: 0
     location: {x: 14, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_15_7
-    type: 1
+    type: 0
     location: {x: 15, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_16_7
-    type: 1
+    type: 0
     location: {x: 16, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_17_7
-    type: 0
+    type: 3
     location: {x: 17, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_7
     type: 0
     location: {x: 18, y: 7}
@@ -6858,23 +6858,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_20_7
-    type: 0
+    type: 3
     location: {x: 20, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_21_7
-    type: 0
+    type: 3
     location: {x: 21, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_22_7
-    type: 0
+    type: 3
     location: {x: 22, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_23_7
     type: 0
     location: {x: 23, y: 7}
@@ -6882,11 +6882,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_7
-    type: 0
+    type: 4
     location: {x: 24, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_25_7
     type: 0
     location: {x: 25, y: 7}
@@ -6912,35 +6912,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_7
-    type: 1
+    type: 0
     location: {x: 29, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_7
-    type: 1
+    type: 0
     location: {x: 30, y: 7}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_7
-    type: 0
+    type: 3
     location: {x: 31, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_32_7
-    type: 0
+    type: 3
     location: {x: 32, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_33_7
-    type: 0
+    type: 3
     location: {x: 33, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_34_7
     type: 0
     location: {x: 34, y: 7}
@@ -6954,11 +6954,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_36_7
-    type: 0
+    type: 3
     location: {x: 36, y: 7}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_37_7
     type: 0
     location: {x: 37, y: 7}
@@ -7050,35 +7050,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_8
-    type: 1
+    type: 0
     location: {x: 12, y: 8}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_8
-    type: 1
+    type: 0
     location: {x: 13, y: 8}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_14_8
-    type: 0
+    type: 4
     location: {x: 14, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_15_8
-    type: 1
+    type: 0
     location: {x: 15, y: 8}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_16_8
-    type: 1
+    type: 0
     location: {x: 16, y: 8}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_17_8
     type: 0
     location: {x: 17, y: 8}
@@ -7086,11 +7086,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_18_8
-    type: 0
+    type: 3
     location: {x: 18, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_19_8
     type: 0
     location: {x: 19, y: 8}
@@ -7122,17 +7122,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_8
-    type: 0
+    type: 4
     location: {x: 24, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_25_8
-    type: 0
+    type: 4
     location: {x: 25, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_26_8
     type: 0
     location: {x: 26, y: 8}
@@ -7140,11 +7140,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_8
-    type: 0
+    type: 4
     location: {x: 27, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_28_8
     type: 0
     location: {x: 28, y: 8}
@@ -7152,17 +7152,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_8
-    type: 1
+    type: 0
     location: {x: 29, y: 8}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_8
-    type: 1
+    type: 0
     location: {x: 30, y: 8}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_8
     type: 0
     location: {x: 31, y: 8}
@@ -7176,17 +7176,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_33_8
-    type: 0
+    type: 3
     location: {x: 33, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_34_8
-    type: 0
+    type: 3
     location: {x: 34, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_35_8
     type: 0
     location: {x: 35, y: 8}
@@ -7194,17 +7194,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_36_8
-    type: 0
+    type: 3
     location: {x: 36, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_37_8
-    type: 0
+    type: 3
     location: {x: 37, y: 8}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_38_8
     type: 0
     location: {x: 38, y: 8}
@@ -7290,17 +7290,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_9
-    type: 1
+    type: 0
     location: {x: 12, y: 9}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_9
-    type: 1
+    type: 0
     location: {x: 13, y: 9}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_14_9
     type: 0
     location: {x: 14, y: 9}
@@ -7308,23 +7308,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_15_9
-    type: 1
+    type: 0
     location: {x: 15, y: 9}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_16_9
-    type: 1
+    type: 0
     location: {x: 16, y: 9}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_17_9
-    type: 0
+    type: 3
     location: {x: 17, y: 9}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_9
     type: 0
     location: {x: 18, y: 9}
@@ -7332,11 +7332,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_19_9
-    type: 0
+    type: 3
     location: {x: 19, y: 9}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_9
     type: 0
     location: {x: 20, y: 9}
@@ -7362,11 +7362,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_9
-    type: 0
+    type: 4
     location: {x: 24, y: 9}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_25_9
     type: 0
     location: {x: 25, y: 9}
@@ -7422,17 +7422,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_34_9
-    type: 0
+    type: 3
     location: {x: 34, y: 9}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_35_9
-    type: 0
+    type: 3
     location: {x: 35, y: 9}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_9
     type: 0
     location: {x: 36, y: 9}
@@ -7554,23 +7554,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_16_10
-    type: 0
+    type: 3
     location: {x: 16, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_17_10
-    type: 0
+    type: 3
     location: {x: 17, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_10
-    type: 0
+    type: 4
     location: {x: 18, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_19_10
     type: 0
     location: {x: 19, y: 10}
@@ -7584,11 +7584,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_21_10
-    type: 0
+    type: 3
     location: {x: 21, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_22_10
     type: 0
     location: {x: 22, y: 10}
@@ -7602,17 +7602,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_10
-    type: 0
+    type: 3
     location: {x: 24, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_25_10
-    type: 0
+    type: 3
     location: {x: 25, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_26_10
     type: 0
     location: {x: 26, y: 10}
@@ -7650,11 +7650,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_32_10
-    type: 1
+    type: 0
     location: {x: 32, y: 10}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_33_10
     type: 0
     location: {x: 33, y: 10}
@@ -7668,11 +7668,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_10
-    type: 0
+    type: 3
     location: {x: 35, y: 10}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_10
     type: 0
     location: {x: 36, y: 10}
@@ -7752,11 +7752,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_11
-    type: 0
+    type: 4
     location: {x: 9, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_10_11
     type: 0
     location: {x: 10, y: 11}
@@ -7782,35 +7782,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_14_11
-    type: 0
+    type: 3
     location: {x: 14, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_15_11
-    type: 0
+    type: 3
     location: {x: 15, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_16_11
-    type: 0
+    type: 3
     location: {x: 16, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_17_11
-    type: 0
+    type: 3
     location: {x: 17, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_11
-    type: 0
+    type: 4
     location: {x: 18, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_19_11
     type: 0
     location: {x: 19, y: 11}
@@ -7830,35 +7830,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_22_11
-    type: 0
+    type: 3
     location: {x: 22, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_23_11
-    type: 0
+    type: 3
     location: {x: 23, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_24_11
-    type: 0
+    type: 3
     location: {x: 24, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_25_11
-    type: 0
+    type: 3
     location: {x: 25, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_26_11
-    type: 1
+    type: 0
     location: {x: 26, y: 11}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_27_11
     type: 0
     location: {x: 27, y: 11}
@@ -7872,23 +7872,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_11
-    type: 1
+    type: 0
     location: {x: 29, y: 11}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_11
-    type: 1
+    type: 0
     location: {x: 30, y: 11}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_11
-    type: 0
+    type: 4
     location: {x: 31, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_32_11
     type: 0
     location: {x: 32, y: 11}
@@ -7908,11 +7908,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_11
-    type: 0
+    type: 3
     location: {x: 35, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_11
     type: 0
     location: {x: 36, y: 11}
@@ -7920,11 +7920,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_37_11
-    type: 0
+    type: 3
     location: {x: 37, y: 11}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_38_11
     type: 0
     location: {x: 38, y: 11}
@@ -7956,11 +7956,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_3_12
-    type: 1
+    type: 4
     location: {x: 3, y: 12}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 5
   - cellName: map_4_12
     type: 0
     location: {x: 4, y: 12}
@@ -8022,17 +8022,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_14_12
-    type: 0
+    type: 3
     location: {x: 14, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_15_12
-    type: 0
+    type: 4
     location: {x: 15, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_16_12
     type: 0
     location: {x: 16, y: 12}
@@ -8040,11 +8040,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_17_12
-    type: 0
+    type: 4
     location: {x: 17, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_18_12
     type: 0
     location: {x: 18, y: 12}
@@ -8052,11 +8052,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_19_12
-    type: 0
+    type: 4
     location: {x: 19, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_20_12
     type: 0
     location: {x: 20, y: 12}
@@ -8070,29 +8070,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_22_12
-    type: 0
+    type: 3
     location: {x: 22, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_23_12
-    type: 0
+    type: 3
     location: {x: 23, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_24_12
-    type: 0
+    type: 4
     location: {x: 24, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_25_12
-    type: 0
+    type: 3
     location: {x: 25, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_26_12
     type: 0
     location: {x: 26, y: 12}
@@ -8112,17 +8112,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_12
-    type: 1
+    type: 0
     location: {x: 29, y: 12}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_12
-    type: 1
+    type: 0
     location: {x: 30, y: 12}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_12
     type: 0
     location: {x: 31, y: 12}
@@ -8136,17 +8136,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_33_12
-    type: 1
+    type: 0
     location: {x: 33, y: 12}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_34_12
-    type: 0
+    type: 4
     location: {x: 34, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_35_12
     type: 0
     location: {x: 35, y: 12}
@@ -8160,11 +8160,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_37_12
-    type: 0
+    type: 3
     location: {x: 37, y: 12}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_38_12
     type: 0
     location: {x: 38, y: 12}
@@ -8190,17 +8190,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_2_13
-    type: 0
+    type: 4
     location: {x: 2, y: 13}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_3_13
-    type: 1
+    type: 0
     location: {x: 3, y: 13}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_4_13
     type: 0
     location: {x: 4, y: 13}
@@ -8250,17 +8250,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_13
-    type: 1
+    type: 0
     location: {x: 12, y: 13}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_13
-    type: 0
+    type: 3
     location: {x: 13, y: 13}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_14_13
     type: 0
     location: {x: 14, y: 13}
@@ -8280,11 +8280,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_17_13
-    type: 1
+    type: 0
     location: {x: 17, y: 13}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_18_13
     type: 0
     location: {x: 18, y: 13}
@@ -8316,23 +8316,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_23_13
-    type: 0
+    type: 4
     location: {x: 23, y: 13}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_24_13
-    type: 1
+    type: 0
     location: {x: 24, y: 13}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_25_13
-    type: 0
+    type: 4
     location: {x: 25, y: 13}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_26_13
     type: 0
     location: {x: 26, y: 13}
@@ -8352,17 +8352,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_13
-    type: 1
+    type: 0
     location: {x: 29, y: 13}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_13
-    type: 1
+    type: 0
     location: {x: 30, y: 13}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_13
     type: 0
     location: {x: 31, y: 13}
@@ -8472,23 +8472,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_14
-    type: 0
+    type: 3
     location: {x: 9, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_10_14
-    type: 0
+    type: 3
     location: {x: 10, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_11_14
-    type: 0
+    type: 3
     location: {x: 11, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_12_14
     type: 0
     location: {x: 12, y: 14}
@@ -8496,11 +8496,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_13_14
-    type: 0
+    type: 3
     location: {x: 13, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_14_14
     type: 0
     location: {x: 14, y: 14}
@@ -8538,17 +8538,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_20_14
-    type: 0
+    type: 4
     location: {x: 20, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_14
-    type: 0
+    type: 4
     location: {x: 21, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_22_14
     type: 0
     location: {x: 22, y: 14}
@@ -8586,23 +8586,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_28_14
-    type: 0
+    type: 3
     location: {x: 28, y: 14}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_29_14
-    type: 1
+    type: 0
     location: {x: 29, y: 14}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_14
-    type: 1
+    type: 0
     location: {x: 30, y: 14}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_14
     type: 0
     location: {x: 31, y: 14}
@@ -8670,11 +8670,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_2_15
-    type: 1
+    type: 0
     location: {x: 2, y: 15}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_3_15
     type: 0
     location: {x: 3, y: 15}
@@ -8712,11 +8712,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_15
-    type: 1
+    type: 0
     location: {x: 9, y: 15}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_10_15
     type: 0
     location: {x: 10, y: 15}
@@ -8730,23 +8730,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_15
-    type: 0
+    type: 3
     location: {x: 12, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_13_15
-    type: 0
+    type: 3
     location: {x: 13, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_14_15
-    type: 0
+    type: 3
     location: {x: 14, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_15_15
     type: 0
     location: {x: 15, y: 15}
@@ -8760,17 +8760,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_17_15
-    type: 0
+    type: 4
     location: {x: 17, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_18_15
-    type: 0
+    type: 4
     location: {x: 18, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_19_15
     type: 0
     location: {x: 19, y: 15}
@@ -8778,11 +8778,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_20_15
-    type: 0
+    type: 4
     location: {x: 20, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_15
     type: 0
     location: {x: 21, y: 15}
@@ -8820,11 +8820,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_15
-    type: 0
+    type: 3
     location: {x: 27, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_28_15
     type: 0
     location: {x: 28, y: 15}
@@ -8832,17 +8832,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_15
-    type: 1
+    type: 0
     location: {x: 29, y: 15}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_15
-    type: 1
+    type: 3
     location: {x: 30, y: 15}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_31_15
     type: 0
     location: {x: 31, y: 15}
@@ -8850,11 +8850,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_32_15
-    type: 1
+    type: 0
     location: {x: 32, y: 15}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_33_15
     type: 0
     location: {x: 33, y: 15}
@@ -8868,11 +8868,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_15
-    type: 0
+    type: 3
     location: {x: 35, y: 15}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_15
     type: 0
     location: {x: 36, y: 15}
@@ -8934,35 +8934,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_6_16
-    type: 0
+    type: 3
     location: {x: 6, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_7_16
-    type: 0
+    type: 3
     location: {x: 7, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_8_16
-    type: 0
+    type: 3
     location: {x: 8, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_9_16
-    type: 0
+    type: 3
     location: {x: 9, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_10_16
-    type: 0
+    type: 4
     location: {x: 10, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_11_16
     type: 0
     location: {x: 11, y: 16}
@@ -8970,11 +8970,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_16
-    type: 0
+    type: 4
     location: {x: 12, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_13_16
     type: 0
     location: {x: 13, y: 16}
@@ -8988,17 +8988,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_15_16
-    type: 0
+    type: 4
     location: {x: 15, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_16_16
-    type: 0
+    type: 4
     location: {x: 16, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_17_16
     type: 0
     location: {x: 17, y: 16}
@@ -9018,11 +9018,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_20_16
-    type: 0
+    type: 4
     location: {x: 20, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_16
     type: 0
     location: {x: 21, y: 16}
@@ -9054,17 +9054,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_26_16
-    type: 0
+    type: 4
     location: {x: 26, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_27_16
-    type: 0
+    type: 3
     location: {x: 27, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_28_16
     type: 0
     location: {x: 28, y: 16}
@@ -9072,17 +9072,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_16
-    type: 1
+    type: 0
     location: {x: 29, y: 16}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_16
-    type: 1
+    type: 3
     location: {x: 30, y: 16}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_31_16
     type: 0
     location: {x: 31, y: 16}
@@ -9108,11 +9108,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_16
-    type: 0
+    type: 3
     location: {x: 35, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_16
     type: 0
     location: {x: 36, y: 16}
@@ -9126,11 +9126,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_38_16
-    type: 0
+    type: 4
     location: {x: 38, y: 16}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_39_16
     type: 1
     location: {x: 39, y: 16}
@@ -9144,17 +9144,17 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_17
-    type: 0
+    type: 1
     location: {x: 1, y: 17}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_2_17
-    type: 0
+    type: 1
     location: {x: 2, y: 17}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_3_17
     type: 0
     location: {x: 3, y: 17}
@@ -9174,29 +9174,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_6_17
-    type: 1
+    type: 3
     location: {x: 6, y: 17}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_7_17
-    type: 0
+    type: 3
     location: {x: 7, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_8_17
-    type: 0
+    type: 3
     location: {x: 8, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_9_17
-    type: 0
+    type: 3
     location: {x: 9, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_10_17
     type: 0
     location: {x: 10, y: 17}
@@ -9204,17 +9204,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_11_17
-    type: 0
+    type: 4
     location: {x: 11, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_12_17
-    type: 0
+    type: 4
     location: {x: 12, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_13_17
     type: 0
     location: {x: 13, y: 17}
@@ -9234,11 +9234,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_16_17
-    type: 0
+    type: 4
     location: {x: 16, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_17_17
     type: 0
     location: {x: 17, y: 17}
@@ -9282,11 +9282,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_17
-    type: 1
+    type: 0
     location: {x: 24, y: 17}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_25_17
     type: 0
     location: {x: 25, y: 17}
@@ -9294,17 +9294,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_26_17
-    type: 0
+    type: 3
     location: {x: 26, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_27_17
-    type: 0
+    type: 3
     location: {x: 27, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_28_17
     type: 0
     location: {x: 28, y: 17}
@@ -9312,17 +9312,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_17
-    type: 1
+    type: 3
     location: {x: 29, y: 17}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_30_17
-    type: 1
+    type: 3
     location: {x: 30, y: 17}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_31_17
     type: 0
     location: {x: 31, y: 17}
@@ -9348,17 +9348,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_17
-    type: 0
+    type: 3
     location: {x: 35, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_17
-    type: 1
+    type: 0
     location: {x: 36, y: 17}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_37_17
     type: 0
     location: {x: 37, y: 17}
@@ -9366,11 +9366,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_38_17
-    type: 0
+    type: 4
     location: {x: 38, y: 17}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_39_17
     type: 1
     location: {x: 39, y: 17}
@@ -9384,29 +9384,29 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_18
-    type: 0
+    type: 1
     location: {x: 1, y: 18}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_2_18
-    type: 0
+    type: 1
     location: {x: 2, y: 18}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_3_18
-    type: 0
+    type: 1
     location: {x: 3, y: 18}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_4_18
-    type: 0
+    type: 1
     location: {x: 4, y: 18}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_5_18
     type: 0
     location: {x: 5, y: 18}
@@ -9420,23 +9420,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_7_18
-    type: 0
+    type: 3
     location: {x: 7, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_8_18
-    type: 0
+    type: 3
     location: {x: 8, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_9_18
-    type: 0
+    type: 3
     location: {x: 9, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_10_18
     type: 0
     location: {x: 10, y: 18}
@@ -9522,23 +9522,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_18
-    type: 0
+    type: 3
     location: {x: 24, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_25_18
-    type: 0
+    type: 3
     location: {x: 25, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_26_18
-    type: 0
+    type: 3
     location: {x: 26, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_27_18
     type: 0
     location: {x: 27, y: 18}
@@ -9546,23 +9546,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_28_18
-    type: 0
+    type: 3
     location: {x: 28, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_29_18
-    type: 1
+    type: 3
     location: {x: 29, y: 18}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_30_18
-    type: 1
+    type: 0
     location: {x: 30, y: 18}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_18
     type: 0
     location: {x: 31, y: 18}
@@ -9588,11 +9588,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_18
-    type: 0
+    type: 3
     location: {x: 35, y: 18}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_36_18
     type: 0
     location: {x: 36, y: 18}
@@ -9624,17 +9624,17 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_19
-    type: 1
+    type: 4
     location: {x: 1, y: 19}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 5
   - cellName: map_2_19
-    type: 1
+    type: 0
     location: {x: 2, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_3_19
     type: 1
     location: {x: 3, y: 19}
@@ -9654,53 +9654,53 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_6_19
-    type: 1
+    type: 0
     location: {x: 6, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_7_19
-    type: 1
+    type: 0
     location: {x: 7, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_8_19
-    type: 1
+    type: 0
     location: {x: 8, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_9_19
-    type: 1
+    type: 0
     location: {x: 9, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_10_19
-    type: 1
+    type: 0
     location: {x: 10, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_11_19
-    type: 1
+    type: 0
     location: {x: 11, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_12_19
-    type: 1
+    type: 0
     location: {x: 12, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_19
-    type: 1
+    type: 0
     location: {x: 13, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_14_19
     type: 0
     location: {x: 14, y: 19}
@@ -9714,107 +9714,107 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_16_19
-    type: 1
+    type: 0
     location: {x: 16, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_17_19
-    type: 1
+    type: 0
     location: {x: 17, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_18_19
-    type: 1
+    type: 0
     location: {x: 18, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_19_19
-    type: 1
+    type: 0
     location: {x: 19, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_20_19
-    type: 1
+    type: 0
     location: {x: 20, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_21_19
-    type: 1
+    type: 0
     location: {x: 21, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_22_19
-    type: 1
+    type: 0
     location: {x: 22, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_23_19
-    type: 1
+    type: 0
     location: {x: 23, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_24_19
-    type: 1
+    type: 3
     location: {x: 24, y: 19}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_25_19
-    type: 1
+    type: 3
     location: {x: 25, y: 19}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_26_19
-    type: 1
+    type: 3
     location: {x: 26, y: 19}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_27_19
-    type: 1
+    type: 0
     location: {x: 27, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_28_19
-    type: 1
+    type: 3
     location: {x: 28, y: 19}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_29_19
-    type: 1
+    type: 0
     location: {x: 29, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_19
-    type: 1
+    type: 0
     location: {x: 30, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_19
-    type: 1
+    type: 0
     location: {x: 31, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_32_19
-    type: 1
+    type: 0
     location: {x: 32, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_33_19
     type: 0
     location: {x: 33, y: 19}
@@ -9828,29 +9828,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_19
-    type: 1
+    type: 0
     location: {x: 35, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_36_19
-    type: 1
+    type: 0
     location: {x: 36, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_37_19
-    type: 1
+    type: 0
     location: {x: 37, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_38_19
-    type: 1
+    type: 0
     location: {x: 38, y: 19}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_39_19
     type: 1
     location: {x: 39, y: 19}
@@ -9864,23 +9864,23 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_20
-    type: 1
+    type: 0
     location: {x: 1, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_2_20
-    type: 1
+    type: 0
     location: {x: 2, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_3_20
-    type: 1
+    type: 0
     location: {x: 3, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_4_20
     type: 1
     location: {x: 4, y: 20}
@@ -9930,17 +9930,17 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_12_20
-    type: 1
+    type: 0
     location: {x: 12, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_20
-    type: 1
+    type: 0
     location: {x: 13, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_14_20
     type: 0
     location: {x: 14, y: 20}
@@ -9954,23 +9954,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_16_20
-    type: 1
+    type: 0
     location: {x: 16, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_17_20
-    type: 1
+    type: 0
     location: {x: 17, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_18_20
-    type: 1
+    type: 0
     location: {x: 18, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_19_20
     type: 1
     location: {x: 19, y: 20}
@@ -9996,29 +9996,29 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_23_20
-    type: 1
+    type: 0
     location: {x: 23, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_24_20
-    type: 1
+    type: 0
     location: {x: 24, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_25_20
-    type: 1
+    type: 0
     location: {x: 25, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_26_20
-    type: 1
+    type: 0
     location: {x: 26, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_27_20
     type: 1
     location: {x: 27, y: 20}
@@ -10026,41 +10026,41 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_28_20
-    type: 1
+    type: 0
     location: {x: 28, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_29_20
-    type: 1
+    type: 0
     location: {x: 29, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_20
-    type: 1
+    type: 0
     location: {x: 30, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_20
-    type: 1
+    type: 0
     location: {x: 31, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_32_20
-    type: 1
+    type: 0
     location: {x: 32, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_33_20
-    type: 0
+    type: 3
     location: {x: 33, y: 20}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_34_20
     type: 0
     location: {x: 34, y: 20}
@@ -10068,29 +10068,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_20
-    type: 1
+    type: 0
     location: {x: 35, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_36_20
-    type: 1
+    type: 0
     location: {x: 36, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_37_20
-    type: 1
+    type: 0
     location: {x: 37, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_38_20
-    type: 1
+    type: 0
     location: {x: 38, y: 20}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_39_20
     type: 1
     location: {x: 39, y: 20}
@@ -10104,29 +10104,29 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_21
-    type: 1
+    type: 0
     location: {x: 1, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_2_21
-    type: 1
+    type: 0
     location: {x: 2, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_3_21
-    type: 1
+    type: 0
     location: {x: 3, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_4_21
-    type: 1
+    type: 0
     location: {x: 4, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_5_21
     type: 1
     location: {x: 5, y: 21}
@@ -10182,17 +10182,17 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_14_21
-    type: 0
+    type: 1
     location: {x: 14, y: 21}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_15_21
-    type: 0
+    type: 1
     location: {x: 15, y: 21}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_16_21
     type: 1
     location: {x: 16, y: 21}
@@ -10266,35 +10266,35 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_28_21
-    type: 1
+    type: 0
     location: {x: 28, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_29_21
-    type: 1
+    type: 0
     location: {x: 29, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_21
-    type: 1
+    type: 0
     location: {x: 30, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_21
-    type: 1
+    type: 0
     location: {x: 31, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_32_21
-    type: 1
+    type: 3
     location: {x: 32, y: 21}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_33_21
     type: 0
     location: {x: 33, y: 21}
@@ -10302,35 +10302,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_34_21
-    type: 0
+    type: 4
     location: {x: 34, y: 21}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_35_21
-    type: 1
+    type: 0
     location: {x: 35, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_36_21
-    type: 1
+    type: 0
     location: {x: 36, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_37_21
-    type: 1
+    type: 0
     location: {x: 37, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_38_21
-    type: 1
+    type: 0
     location: {x: 38, y: 21}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_39_21
     type: 1
     location: {x: 39, y: 21}
@@ -10362,11 +10362,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_4_22
-    type: 0
+    type: 4
     location: {x: 4, y: 22}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_5_22
     type: 0
     location: {x: 5, y: 22}
@@ -10386,11 +10386,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_8_22
-    type: 1
+    type: 0
     location: {x: 8, y: 22}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_9_22
     type: 0
     location: {x: 9, y: 22}
@@ -10404,59 +10404,59 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_11_22
-    type: 0
+    type: 1
     location: {x: 11, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_12_22
-    type: 0
+    type: 1
     location: {x: 12, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_13_22
-    type: 0
+    type: 1
     location: {x: 13, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_14_22
-    type: 0
+    type: 1
     location: {x: 14, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_15_22
-    type: 0
+    type: 1
     location: {x: 15, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_16_22
-    type: 0
+    type: 1
     location: {x: 16, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_17_22
-    type: 0
+    type: 1
     location: {x: 17, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_18_22
-    type: 0
+    type: 1
     location: {x: 18, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_19_22
-    type: 0
+    type: 1
     location: {x: 19, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_20_22
     type: 0
     location: {x: 20, y: 22}
@@ -10470,41 +10470,41 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_22_22
-    type: 0
+    type: 1
     location: {x: 22, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_23_22
-    type: 0
+    type: 1
     location: {x: 23, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_24_22
-    type: 0
+    type: 1
     location: {x: 24, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_25_22
-    type: 0
+    type: 1
     location: {x: 25, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_26_22
-    type: 0
+    type: 1
     location: {x: 26, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_27_22
-    type: 0
+    type: 1
     location: {x: 27, y: 22}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_28_22
     type: 0
     location: {x: 28, y: 22}
@@ -10512,17 +10512,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_22
-    type: 1
+    type: 0
     location: {x: 29, y: 22}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_22
-    type: 1
+    type: 0
     location: {x: 30, y: 22}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_22
     type: 0
     location: {x: 31, y: 22}
@@ -10530,11 +10530,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_32_22
-    type: 1
+    type: 3
     location: {x: 32, y: 22}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_33_22
     type: 0
     location: {x: 33, y: 22}
@@ -10554,23 +10554,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_36_22
-    type: 0
+    type: 3
     location: {x: 36, y: 22}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_37_22
-    type: 0
+    type: 3
     location: {x: 37, y: 22}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_38_22
-    type: 1
+    type: 0
     location: {x: 38, y: 22}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_39_22
     type: 1
     location: {x: 39, y: 22}
@@ -10590,11 +10590,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_2_23
-    type: 1
+    type: 0
     location: {x: 2, y: 23}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_3_23
     type: 0
     location: {x: 3, y: 23}
@@ -10632,11 +10632,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_23
-    type: 1
+    type: 0
     location: {x: 9, y: 23}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_10_23
     type: 0
     location: {x: 10, y: 23}
@@ -10668,11 +10668,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_15_23
-    type: 0
+    type: 4
     location: {x: 15, y: 23}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_16_23
     type: 0
     location: {x: 16, y: 23}
@@ -10686,17 +10686,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_18_23
-    type: 1
+    type: 0
     location: {x: 18, y: 23}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_19_23
-    type: 0
+    type: 3
     location: {x: 19, y: 23}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_23
     type: 0
     location: {x: 20, y: 23}
@@ -10704,11 +10704,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_21_23
-    type: 0
+    type: 4
     location: {x: 21, y: 23}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_22_23
     type: 0
     location: {x: 22, y: 23}
@@ -10728,11 +10728,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_25_23
-    type: 0
+    type: 3
     location: {x: 25, y: 23}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_26_23
     type: 0
     location: {x: 26, y: 23}
@@ -10740,29 +10740,29 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_23
-    type: 1
+    type: 0
     location: {x: 27, y: 23}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_28_23
-    type: 0
+    type: 4
     location: {x: 28, y: 23}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_29_23
-    type: 1
+    type: 0
     location: {x: 29, y: 23}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_23
-    type: 1
+    type: 0
     location: {x: 30, y: 23}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_23
     type: 0
     location: {x: 31, y: 23}
@@ -10776,11 +10776,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_33_23
-    type: 0
+    type: 3
     location: {x: 33, y: 23}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_34_23
     type: 0
     location: {x: 34, y: 23}
@@ -10866,11 +10866,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_8_24
-    type: 0
+    type: 4
     location: {x: 8, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_9_24
     type: 0
     location: {x: 9, y: 24}
@@ -10890,11 +10890,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_24
-    type: 0
+    type: 4
     location: {x: 12, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_13_24
     type: 0
     location: {x: 13, y: 24}
@@ -10920,23 +10920,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_17_24
-    type: 0
+    type: 3
     location: {x: 17, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_24
-    type: 0
+    type: 3
     location: {x: 18, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_19_24
-    type: 0
+    type: 3
     location: {x: 19, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_24
     type: 0
     location: {x: 20, y: 24}
@@ -10944,11 +10944,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_21_24
-    type: 0
+    type: 4
     location: {x: 21, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_22_24
     type: 0
     location: {x: 22, y: 24}
@@ -10962,11 +10962,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_24_24
-    type: 0
+    type: 3
     location: {x: 24, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_25_24
     type: 0
     location: {x: 25, y: 24}
@@ -10980,11 +10980,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_24
-    type: 0
+    type: 3
     location: {x: 27, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_28_24
     type: 0
     location: {x: 28, y: 24}
@@ -10992,17 +10992,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_24
-    type: 1
+    type: 0
     location: {x: 29, y: 24}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_24
-    type: 1
+    type: 0
     location: {x: 30, y: 24}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_24
     type: 0
     location: {x: 31, y: 24}
@@ -11010,17 +11010,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_32_24
-    type: 0
+    type: 3
     location: {x: 32, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_33_24
-    type: 0
+    type: 4
     location: {x: 33, y: 24}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_34_24
     type: 0
     location: {x: 34, y: 24}
@@ -11076,17 +11076,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_3_25
-    type: 1
+    type: 0
     location: {x: 3, y: 25}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_4_25
-    type: 0
+    type: 3
     location: {x: 4, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_5_25
     type: 0
     location: {x: 5, y: 25}
@@ -11130,11 +11130,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_25
-    type: 1
+    type: 0
     location: {x: 12, y: 25}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_13_25
     type: 0
     location: {x: 13, y: 25}
@@ -11142,11 +11142,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_14_25
-    type: 0
+    type: 3
     location: {x: 14, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_15_25
     type: 0
     location: {x: 15, y: 25}
@@ -11172,41 +11172,41 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_19_25
-    type: 0
+    type: 3
     location: {x: 19, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_25
-    type: 0
+    type: 4
     location: {x: 20, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_25
-    type: 0
+    type: 4
     location: {x: 21, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_22_25
-    type: 0
+    type: 4
     location: {x: 22, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_23_25
-    type: 0
+    type: 3
     location: {x: 23, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_24_25
-    type: 1
+    type: 4
     location: {x: 24, y: 25}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 5
   - cellName: map_25_25
     type: 0
     location: {x: 25, y: 25}
@@ -11220,11 +11220,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_25
-    type: 0
+    type: 4
     location: {x: 27, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_28_25
     type: 0
     location: {x: 28, y: 25}
@@ -11238,17 +11238,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_30_25
-    type: 0
+    type: 3
     location: {x: 30, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_31_25
-    type: 0
+    type: 3
     location: {x: 31, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_32_25
     type: 0
     location: {x: 32, y: 25}
@@ -11256,17 +11256,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_33_25
-    type: 0
+    type: 3
     location: {x: 33, y: 25}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_34_25
-    type: 1
+    type: 3
     location: {x: 34, y: 25}
     broken:
-      b: 0
-      i: -1
+      b: 1
+      i: 9
   - cellName: map_35_25
     type: 0
     location: {x: 35, y: 25}
@@ -11328,11 +11328,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_5_26
-    type: 0
+    type: 3
     location: {x: 5, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_6_26
     type: 0
     location: {x: 6, y: 26}
@@ -11352,11 +11352,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_26
-    type: 0
+    type: 4
     location: {x: 9, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_10_26
     type: 0
     location: {x: 10, y: 26}
@@ -11370,11 +11370,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_12_26
-    type: 0
+    type: 4
     location: {x: 12, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_13_26
     type: 0
     location: {x: 13, y: 26}
@@ -11382,11 +11382,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_14_26
-    type: 0
+    type: 3
     location: {x: 14, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_15_26
     type: 0
     location: {x: 15, y: 26}
@@ -11394,11 +11394,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_16_26
-    type: 0
+    type: 4
     location: {x: 16, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_17_26
     type: 0
     location: {x: 17, y: 26}
@@ -11406,11 +11406,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_18_26
-    type: 0
+    type: 3
     location: {x: 18, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_19_26
     type: 0
     location: {x: 19, y: 26}
@@ -11418,11 +11418,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_20_26
-    type: 0
+    type: 4
     location: {x: 20, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_26
     type: 0
     location: {x: 21, y: 26}
@@ -11436,23 +11436,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_23_26
-    type: 0
+    type: 3
     location: {x: 23, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_24_26
-    type: 0
+    type: 4
     location: {x: 24, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_25_26
-    type: 0
+    type: 4
     location: {x: 25, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_26_26
     type: 0
     location: {x: 26, y: 26}
@@ -11460,11 +11460,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_27_26
-    type: 0
+    type: 4
     location: {x: 27, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_28_26
     type: 0
     location: {x: 28, y: 26}
@@ -11514,11 +11514,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_36_26
-    type: 0
+    type: 3
     location: {x: 36, y: 26}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_37_26
     type: 0
     location: {x: 37, y: 26}
@@ -11574,11 +11574,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_6_27
-    type: 0
+    type: 3
     location: {x: 6, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_7_27
     type: 0
     location: {x: 7, y: 27}
@@ -11592,11 +11592,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_9_27
-    type: 1
+    type: 0
     location: {x: 9, y: 27}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_10_27
     type: 0
     location: {x: 10, y: 27}
@@ -11622,11 +11622,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_14_27
-    type: 0
+    type: 3
     location: {x: 14, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_15_27
     type: 0
     location: {x: 15, y: 27}
@@ -11646,41 +11646,41 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_18_27
-    type: 0
+    type: 3
     location: {x: 18, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_19_27
-    type: 0
+    type: 4
     location: {x: 19, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_20_27
-    type: 0
+    type: 4
     location: {x: 20, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_21_27
-    type: 0
+    type: 4
     location: {x: 21, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_22_27
-    type: 0
+    type: 4
     location: {x: 22, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_23_27
-    type: 0
+    type: 3
     location: {x: 23, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_24_27
     type: 0
     location: {x: 24, y: 27}
@@ -11712,23 +11712,23 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_27
-    type: 1
+    type: 0
     location: {x: 29, y: 27}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_27
-    type: 1
+    type: 0
     location: {x: 30, y: 27}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_27
-    type: 0
+    type: 4
     location: {x: 31, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_32_27
     type: 0
     location: {x: 32, y: 27}
@@ -11742,11 +11742,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_34_27
-    type: 0
+    type: 3
     location: {x: 34, y: 27}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_35_27
     type: 0
     location: {x: 35, y: 27}
@@ -11784,11 +11784,11 @@ MonoBehaviour:
       b: 0
       i: -1
   - cellName: map_1_28
-    type: 0
+    type: 1
     location: {x: 1, y: 28}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_2_28
     type: 0
     location: {x: 2, y: 28}
@@ -11808,11 +11808,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_5_28
-    type: 0
+    type: 4
     location: {x: 5, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_6_28
     type: 0
     location: {x: 6, y: 28}
@@ -11874,35 +11874,35 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_16_28
-    type: 0
+    type: 3
     location: {x: 16, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_17_28
-    type: 0
+    type: 3
     location: {x: 17, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_18_28
-    type: 0
+    type: 3
     location: {x: 18, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_19_28
-    type: 0
+    type: 3
     location: {x: 19, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_20_28
-    type: 0
+    type: 3
     location: {x: 20, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 9
   - cellName: map_21_28
     type: 0
     location: {x: 21, y: 28}
@@ -11952,17 +11952,17 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_29_28
-    type: 1
+    type: 0
     location: {x: 29, y: 28}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_30_28
-    type: 1
+    type: 0
     location: {x: 30, y: 28}
     broken:
       b: 0
-      i: -1
+      i: 0
   - cellName: map_31_28
     type: 0
     location: {x: 31, y: 28}
@@ -11988,11 +11988,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_35_28
-    type: 0
+    type: 4
     location: {x: 35, y: 28}
     broken:
-      b: 0
-      i: 0
+      b: 1
+      i: 5
   - cellName: map_36_28
     type: 0
     location: {x: 36, y: 28}
@@ -12006,11 +12006,11 @@ MonoBehaviour:
       b: 0
       i: 0
   - cellName: map_38_28
-    type: 0
+    type: 1
     location: {x: 38, y: 28}
     broken:
       b: 0
-      i: 0
+      i: -1
   - cellName: map_39_28
     type: 1
     location: {x: 39, y: 28}
@@ -24622,7 +24622,7 @@ PrefabInstance:
     - target: {fileID: 7812515277594334471, guid: b593b807d2aed3843af9dd524e687274,
         type: 3}
       propertyPath: m_Name
-      value: Locust
+      value: Knight_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b593b807d2aed3843af9dd524e687274, type: 3}
@@ -24714,7 +24714,7 @@ PrefabInstance:
     - target: {fileID: 7812515277594334471, guid: b593b807d2aed3843af9dd524e687274,
         type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: Knight_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b593b807d2aed3843af9dd524e687274, type: 3}
@@ -24817,7 +24817,7 @@ PrefabInstance:
     - target: {fileID: 7812515277594334471, guid: b593b807d2aed3843af9dd524e687274,
         type: 3}
       propertyPath: m_Name
-      value: Dummy
+      value: Knight_0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b593b807d2aed3843af9dd524e687274, type: 3}

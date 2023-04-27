@@ -4,7 +4,7 @@ using UnityEngine;
 public class Unit : MassObject
 {
     [SerializeField]
-    private float accele = 0.3f;
+    private float speed = 1.0f;
     [SerializeField]
     private float friction = 0.2f;
     [SerializeField]
@@ -71,17 +71,16 @@ public class Unit : MassObject
             Destroy(this.weapon.gameObject);
 
         this.weapon = weapon;
-        weapon.transform.parent = view.GetParent();
+        weapon.transform.parent = transform;
         weapon.transform.localPosition = new Vector3();
     }
 
-    public void SetMoveInput(float x, float y)
+    public void SetVector(Vector2 vector)
     {
-        if (x == 0 && y == 0) return;
+        if (vector.x == 0 && vector.y == 0) return;
 
-        _speed.x = x;
-        _speed.y = y;
-        direction.SetGoing(x, y);
+        _vector = vector;
+        direction.SetGoing(vector.x, vector.y);
     }
 
     public override void Execute()
@@ -91,11 +90,11 @@ public class Unit : MassObject
 
         if (controller != null) controller.Execute();
 
-        x += _speed.x + _force.x;
-        y += _speed.y + _force.y;
+        x += (_vector.x * speed) + _force.x;
+        y += (_vector.y * speed) + _force.y;
 
-        _speed.x = 0;
-        _speed.y = 0;
+        _vector.x = 0;
+        _vector.y = 0;
 
         z = y;
 
@@ -182,6 +181,8 @@ public class Unit : MassObject
     public void ExecuteEvent()
     {
         DamageResult result = battle.DamageExecute(position);
+
+        if (result.damage <= 0) return;
 
         if (battle.lifeLogic.isZeroLife)
             LifeZero();

@@ -27,7 +27,7 @@ public class FieldMapTest : DIMonoBehaviour
 
         CameraObject mainCamera = Camera.main.GetComponent<CameraObject>();
         mainCamera.Initialize();
-        mainCamera.SetTarget(unit.view.baseSprite);
+        mainCamera.SetTarget(unit.gameObject);
     }
 
     void FixedUpdate()

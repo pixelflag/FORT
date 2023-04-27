@@ -5,15 +5,15 @@ public class MassObject : PixelObject
     public CollisionObject collision { get; set; }
 
     // 自身のベクトル
-    protected Vector2 _speed = new Vector2();
-    public Vector2 speed => _speed;
+    protected Vector2 _vector = new Vector2();
+    public Vector2 vector => _vector;
 
     // 外的なベクトル
     protected Vector2 _force = new Vector2();
     public Vector2 force => _force;
 
     public Vector3 prevPosition { get; private set; }
-    public bool isStop => (speed.x == 0 && speed.y == 0);
+    public bool isStop => (vector.x == 0 && vector.y == 0);
 
     public bool isDestroy { get; private set; }
     

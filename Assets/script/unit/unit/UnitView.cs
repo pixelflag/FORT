@@ -63,16 +63,12 @@ public class UnitView : VPixelObject
     }
 
     // Life gauge ----------
-    [SerializeField]
-    private LifeGauge gaugePrefav = default;
+
     public LifeGauge lifeGauge { get; private set; }
 
     public void AddLifeGage()
     {
         if (lifeGauge != null) return;
-        lifeGauge = Instantiate(gaugePrefav).GetComponent<LifeGauge>();
-
-        lifeGauge.Initialize(spriteTransform, new Vector3(0, 12, 0));
+        lifeGauge = creater.CreateLifeGauge(transform);
     }
-
 }

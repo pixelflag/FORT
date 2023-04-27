@@ -31,11 +31,11 @@ public class BattleEffect : MassObject
         base.Execute();
         view.Draw();
 
-        _speed.x += accel.x;
-        _speed.y += accel.y;
+        _vector.x += accel.x;
+        _vector.y += accel.y;
 
-        x += _speed.x;
-        y += _speed.y;
+        x += _vector.x;
+        y += _vector.y;
 
         count++;
 

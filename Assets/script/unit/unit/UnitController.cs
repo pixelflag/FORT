@@ -21,12 +21,12 @@ public class UnitController : DI, IUnitcontroller
     {
         if (isControlLock) return;
         if (unit == null) return;
-        if (unit.state == Unit.State.Dead) return;
+        if (unit.isDead) return;
 
         if (unit.state == Unit.State.Move)
         {
             Vector2 vector = FixDigitalMove.Execute(Global.input.pad1.stickX, Global.input.pad1.stickY);
-            unit.SetMoveInput(vector.x, vector.y);
+            unit.SetVector(vector);
 
             if (Global.input.pad1.GetKeyDown(ControllerButtonType.Button1))
                 unit.Attack();

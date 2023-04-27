@@ -3,11 +3,7 @@
 [RequireComponent(typeof(PixelObject))]
 public class VPixelObject:DIMonoBehaviour
 {
-    public GameObject baseSprite { get; private set; }
-    private Vector3 baseSpriteOffset;
-
     protected Transform _transform;
-    protected Transform spriteTransform;
     protected SpriteRenderer spriteRenderer;
     private PixelObject pixelObj;
 
@@ -15,13 +11,9 @@ public class VPixelObject:DIMonoBehaviour
 
     public virtual void Initialize()
     {
-        baseSprite = transform.Find("BaseSprite").gameObject;
-        baseSpriteOffset = baseSprite.transform.localPosition;
-        spriteRenderer = baseSprite.GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         pixelObj = GetComponent<PixelObject>();
-
         _transform = transform;
-        spriteTransform = baseSprite.transform;
     }
 
     public virtual void ResetObject()
@@ -42,10 +34,10 @@ public class VPixelObject:DIMonoBehaviour
     public void Draw()  
     {
         Vector3 pos = new Vector3();
-        pos.x = Mathf.Round(_transform.position.x + baseSpriteOffset.x);
-        pos.y = Mathf.Round(_transform.position.y + baseSpriteOffset.y);
+        pos.x = Mathf.Round(_transform.position.x);
+        pos.y = Mathf.Round(_transform.position.y);
         pos.z = pos.y + pixelObj.h;
-        spriteTransform.position = pos;
+        _transform.position = pos;
     }
 
     public void ChangeColor(Color color)
@@ -63,10 +55,5 @@ public class VPixelObject:DIMonoBehaviour
     {
         count = flashCount;
         ChangeColor(color);
-    }
-
-    public Transform GetParent()
-    {
-        return spriteTransform;
     }
 }

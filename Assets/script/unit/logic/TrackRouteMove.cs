@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterTrackRouteMove : ICharacterLogic
+public class TrackRouteMove
 {
     private int idleWait = 30;
     private int count = 0;
@@ -37,7 +37,7 @@ public class CharacterTrackRouteMove : ICharacterLogic
         offsetPosition = new Vector2(0,0);
     }
 
-    public void SetPositionTarget(Vector2 position)
+    public void SetOffsetPositon(Vector2 position)
     {
         offsetPosition = position;
     }
@@ -67,7 +67,7 @@ public class CharacterTrackRouteMove : ICharacterLogic
             case State.Walk:
                 count++;
                 targetRouteMove.Execute(self.position);
-                self.SetMoveInput(targetRouteMove.direction.x, targetRouteMove.direction.y);
+                self.SetVector(new Vector2(targetRouteMove.direction.x, targetRouteMove.direction.y));
 
                 if (targetRouteMove.isGoal || count > 180)
                 {

@@ -49,11 +49,10 @@ public class FieldControl : DIMonoBehaviour
         teams[unit.teamID].units.Add(unit);
 
         // 動作ロジックの選択
-        if(false)
+        // もうすこし詳細が決まて来てから考える。
+        if(true)
         {
-            // CharacterTrackRouteMove logic = new CharacterTrackRouteMove();
-            // logic.Initialize(unit, 64);
-            // unit.SetController(logic);
+            unit.SetController(new UnitMouseController());
         }
         else
         {
