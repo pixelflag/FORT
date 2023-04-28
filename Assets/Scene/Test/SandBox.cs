@@ -1,21 +1,48 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SandBox : MonoBehaviour
+public class SandBox : DIMonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private FieldMapData mapData;
+    private MapCollision mapCollision;
+
+    private void Start()
     {
-        
+        Global.GlobalSetUp();
+        Global.isDebugMode = true;
+        Global.isShowCollision = false;
+        Global.playerInputType = PlayerInputType.Mouse;
+
+        mapCollision = new MapCollision();
+
+        Team[] teams = new Team[]
+        {
+            new Team(0),
+            new Team(1),
+        };
+
+        field.CreateMap(teams, mapData);
+        Unit unit = field.AddUnit(UnitType.Knight, 0);
+
+        CameraObject mainCamera = Camera.main.GetComponent<CameraObject>();
+        mainCamera.Initialize();
+        mainCamera.SetTarget(unit.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log(Time.time);
-        }
+        Global.input.Update();
+
+        objects.Execute();
+        field.Execute();
+
+        mapCollision.Execute();
+
+        objects.ExecuteEvent();
+
+        field.CheckEvent();
+        objects.CheckDestroy();
+
+        Global.count++;
     }
 }

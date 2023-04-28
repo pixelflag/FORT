@@ -11,3 +11,15 @@ public class Team
         this.teamID = teamID;
     }
 }
+
+// 大隊データ
+public struct DattalionData
+{
+    public PlatoonData[] platoon;
+}
+
+// 小隊データ
+public struct PlatoonData
+{
+    public UnitType[] units;
+}

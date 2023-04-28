@@ -10,6 +10,8 @@ public static class Global
 
     public static bool isShowCollision = false;
     public static bool isDebugMode = false;
+    public static PlayerInputType playerInputType = PlayerInputType.Mouse;
+
     public static ControllerInput input;
 
     public static int count;
@@ -84,4 +86,10 @@ public class DI
         data = GameData.instance;
         field = FieldControl.instance;
     }
+}
+
+public enum PlayerInputType
+{
+    Controler,
+    Mouse,
 }
