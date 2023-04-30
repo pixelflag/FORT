@@ -3,7 +3,7 @@
 public class ObjectCreater : DIMonoBehaviour
 {
     private static ObjectCreater _instance;
-    public static ObjectCreater instance{ get { return _instance; }}
+    public static ObjectCreater instance => _instance;
 
     private void Awake()
     {
@@ -14,28 +14,33 @@ public class ObjectCreater : DIMonoBehaviour
     private Unit unitPrefab = default;
     [SerializeField]
     private LifeGauge lifeGaugePrefav = default;
+    [SerializeField]
+    private PlatoonFormation[] formations = default;
+    public PlatoonFormation GetFormation(int index) => formations[index];
 
     [SerializeField]
     private ObjectLibrary ObjectLib = default;
     [SerializeField]
     private UnitSkinLibrary unitSkinLib = default;
+
     [SerializeField]
     private MapSpriteLibrary mapSpriteLib = default;
     [SerializeField]
     private WeaponLibrary weaponLib = default;
 
-    public Unit CreateUnit(UnitType type, int teamID, Vector3 position)
+    public Unit CreateUnit(UnitType type, TeamID teamID, Vector3 position)
     {
         switch (type)
         {
             case UnitType.Knight:     return Create(0, 0);
-            case UnitType.Soldier:    return Create(1, 1);
-            case UnitType.Elf:        return Create(2, 2);
-            case UnitType.RedWizard:  return Create(3, 3);
-            case UnitType.BlueWizard: return Create(4, 4);
-            case UnitType.Lumberjack: return Create(5, 5);
-            case UnitType.Dwarves:    return Create(6, 6);
-            case UnitType.Thief:      return Create(7, 7);
+            case UnitType.Soldier:    return Create(1, 0);
+            case UnitType.Lancer:     return Create(12, 1);
+            case UnitType.Elf:        return Create(9, 2);
+            case UnitType.RedWizard:  return Create(6, 3);
+            case UnitType.BlueWizard: return Create(5, 4);
+            case UnitType.Lumberjack: return Create(13, 5);
+            case UnitType.Dwarves:    return Create(16, 6);
+            case UnitType.Thief:      return Create(8, 7);
             default:
                 throw new System.Exception("Failed to generate. : " + type);
         }
@@ -48,9 +53,8 @@ public class ObjectCreater : DIMonoBehaviour
             unit.OnDead += (Unit u) =>
             {
                 // とりあえずこのエフェクトを採用しておく。
-                creater.CreateMessageEffect(MessageEffectName.Angel, position);
-                sound.PlayOneShotOnChannel(1, SeType.ReatinerDead, 1);
-                unit.ObjectDestroy();
+                // creater.CreateMessageEffect(MessageEffectName.Angel, position);
+                // sound.PlayOneShotOnChannel(1, SeType.ReatinerDead, 1);
             };
 
             unit.view.SetSkin(unitSkinLib.Get(skinID));

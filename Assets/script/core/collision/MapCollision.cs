@@ -7,15 +7,18 @@ public class MapCollision : DI
 	{
 		FieldMapObject map = field.map;
 
-		for (int i = 0; i < field.teams.Length; i++)
-		{
-			List<Unit> units = field.teams[i].units;
 
-			for (int j = 0; j < units.Count; j++)
+		for (int t = 0; t < field.teams.Length; t++)
+		{
+			for (int p = 0; p < field.teams[t].platoons.Count; p++)
 			{
-                CheckMapCorrection(units[i]);
-				if (units[i].weapon != null)
-					CheckBrokenSprite(units[i].weapon.collision, units[i].GetAttackData());
+				List<Unit> units = field.teams[t].platoons[p].units;
+				for (int u = 0; u < units.Count; u++)
+				{
+					CheckMapCorrection(units[u]);
+					if (units[u].weapon != null)
+						CheckBrokenSprite(units[u].weapon.collision, units[u].GetAttackData());
+				}
 			}
 		}
 

@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eba6a960e8800764abb957cd9391b9c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyName: 0
+  _unitType: 0
+  _teamID: 0
   _direction: 2
-  enemyslib: {fileID: 3687002971073685105, guid: e9936f257204e224591a3e925b06a364,
-    type: 3}
+  unitLib: {fileID: 4987017521720812, guid: c193f883177b81145a86bc318d47f5e5, type: 3}
 --- !u!212 &4060623564850019521
 SpriteRenderer:
   m_ObjectHideFlags: 0

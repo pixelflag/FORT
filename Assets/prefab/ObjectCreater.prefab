@@ -48,6 +48,8 @@ MonoBehaviour:
     type: 3}
   lifeGaugePrefav: {fileID: 5911727492327686170, guid: 86199a0cb4faa264a88c3912a11a3b39,
     type: 3}
+  formations:
+  - {fileID: 2580348112124968678, guid: 97098e54bfcdf854fb3419a88dd92eb2, type: 3}
   ObjectLib: {fileID: 3212912232135344646, guid: 557729a4f690ea84783c4f01752a0fe3,
     type: 3}
   unitSkinLib: {fileID: 4987017521720812, guid: c193f883177b81145a86bc318d47f5e5,

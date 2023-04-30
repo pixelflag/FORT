@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[ExecuteAlways]
 public class MapUnitData : MonoBehaviour
 {
     [SerializeField]
@@ -7,8 +8,8 @@ public class MapUnitData : MonoBehaviour
     public UnitType unitType => _unitType;
 
     [SerializeField]
-    private int _teamID = default;
-    public int teamID => _teamID;
+    private TeamID _teamID = default;
+    public TeamID teamID => _teamID;
 
     [SerializeField]
     private Direction4Type _direction = Direction4Type.Down;
@@ -39,6 +40,8 @@ public class MapUnitData : MonoBehaviour
                 ChangeSprite(4, false);
                 break;
         }
+
+        name = _unitType.ToString() + "_" + teamID.ToString();
 
         void ChangeSprite(int spriteIndex, bool flip)
         {

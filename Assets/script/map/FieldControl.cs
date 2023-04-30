@@ -7,6 +7,10 @@ public class FieldControl : DIMonoBehaviour
     {
         instance = this;
         cameraObject = Camera.main.GetComponent<CameraObject>();
+        teams = new Team[3];
+        teams[0] = new Team(TeamID.A);
+        teams[1] = new Team(TeamID.B);
+        teams[2] = new Team(TeamID.Neutral);
     }
 
     [SerializeField]
@@ -14,12 +18,88 @@ public class FieldControl : DIMonoBehaviour
     public FieldMapObject map { get; private set; }
 
     private CameraObject cameraObject;
-    public Team[] teams;
+    public Team[] teams;    // A軍、B軍、中立軍
 
     private State state;
     private enum State
     {
         Play,
+    }
+
+    public void CreateMap(FieldMapName toMapName)
+    {
+        CreateMap(fieldLibrary.GetFieldMapData(toMapName));
+    }
+
+    public void CreateMap(FieldMapData mapData)
+    {
+        if (map != null)
+            Destroy(map.gameObject);
+
+        map = new GameObject(mapData.name).AddComponent<FieldMapObject>();
+        map.Initialize(mapData);
+
+        cameraObject.topRight = new Vector2(map.areaSize.x * Global.gridSize.x, 0);
+        cameraObject.bottomLeft = new Vector2(0, -map.areaSize.y * Global.gridSize.y);
+
+        // 中立を作る
+        if(0 < mapData.units.Length)
+        {
+            Team nTeam = new Team(TeamID.Neutral);
+            foreach (MapUnitData ud in mapData.units)
+            {
+                nTeam.CreateNpc(ud.unitType, ud.positon);
+            }
+            teams[(int)TeamID.Neutral] = nTeam;
+        }
+    }
+
+    public void SetTeam(Team team)
+    {
+        teams[(int)team.teamID] = team;
+    }
+
+    public void FieldStart()
+    {
+        // ひとまず先頭にフォーカスする。
+        Unit forcusUnit = teams[0].platoons[0].units[0];
+        cameraObject.SetTarget(forcusUnit.gameObject);
+
+        forcusUnit.SetController(new UnitMouseController());
+        // cUnit.SetController(new UnitController());
+
+        // エントリーポイントに登場する。
+
+        Spawn(field.teams[0]);
+        Spawn(field.teams[1]);
+
+        void Spawn(Team team)
+        {
+            var ent = GetEnterPosition(team.teamID);
+
+            for (int p = 0; p < team.platoons.Count; p++)
+            {
+                for (int u = 0; u < team.platoons[p].units.Count; u++)
+                {
+                    Unit unit = team.platoons[p].units[u];
+                    unit.position = ent.position;
+                    unit.SetDirection(ent.direction);
+                }
+            }
+        }
+
+        MapEntranceObject GetEnterPosition(TeamID teamID)
+        {
+            switch (teamID)
+            {
+                case TeamID.A:
+                    return map.GetEntranceA(0);
+                case TeamID.B:
+                    return map.GetEntranceB(0);
+                default:
+                    throw new System.Exception("enter point not not found. : " + teamID);
+            }
+        }
     }
 
     public void Execute()
@@ -35,55 +115,9 @@ public class FieldControl : DIMonoBehaviour
         }
     }
 
-    public Unit AddUnit(UnitType type, int teamID)
-    {
-        // とりあえず。エントリーポイントの仕様はあとで考える。
-
-        var ent = map.GetEntrance(0);
-        Unit unit = creater.CreateUnit(type, teamID, ent.position);
-        unit.SetDirection(ent.direction);
-        unit.OnDestroy += (MassObject mo) =>
-        {
-            teams[unit.teamID].units.Remove(unit);
-        };
-        teams[unit.teamID].units.Add(unit);
-
-        // 動作ロジックの選択
-        // もうすこし詳細が決まて来てから考える。
-        if(true)
-        {
-            unit.SetController(new UnitMouseController());
-        }
-        else
-        {
-            unit.SetController(new UnitController());
-        }
-
-        return unit;
-    }
-
     public void CheckDestroy()
     {
         map.CheckDestroy();
-    }
-
-    public void CreateMap(Team[] teams, FieldMapName toMapName)
-    {
-        CreateMap(teams, fieldLibrary.GetFieldMapData(toMapName));
-    }
-
-    public void CreateMap(Team[] teams, FieldMapData mapData)
-    {
-        this.teams = teams;
-
-        if (map != null)
-            Destroy(map.gameObject);
-
-        map = new GameObject(mapData.name).AddComponent<FieldMapObject>();
-        map.Initialize(mapData);
-
-        cameraObject.topRight   = new Vector2(map.areaSize.x * Global.gridSize.x, 0);
-        cameraObject.bottomLeft = new Vector2(0, -map.areaSize.y * Global.gridSize.y);
     }
 
     // Event -----------

@@ -18,11 +18,9 @@ public class FieldMapObject : PixelObject
     public void AddAnimationSprite(AnimationMapSprite aSprite) { animationMapSprite.Add(aSprite); }
     public void RemoveAnimationSprite(AnimationMapSprite aSprite) { animationMapSprite.Remove(aSprite); }
 
-    public List<Unit> units { get; private set; }
-    public void AddEnemy(Unit unit) { units.Add(unit); }
-
     public MapEventObject[] events;
-    public MapEntranceObject[] entrance;
+    public MapEntranceObject[] entranceA;
+    public MapEntranceObject[] entranceB;
 
     public void Initialize(FieldMapData mapData)
     {
@@ -61,21 +59,40 @@ public class FieldMapObject : PixelObject
             }
         }
 
-        // Entrance
-        entrance = new MapEntranceObject[mapData.entrance.Length];
-        for (int i = 0; i < entrance.Length; i++)
+        // EntranceA
+        entranceA = new MapEntranceObject[mapData.entranceA.Length];
+        for (int i = 0; i < entranceA.Length; i++)
         {
-            var ed = mapData.entrance[i];
-            entrance[i] = new GameObject(ed.name).AddComponent<MapEntranceObject>();
-            entrance[i].Initialize(ed, transform);
+            var ed = mapData.entranceA[i];
+            entranceA[i] = new GameObject(ed.name).AddComponent<MapEntranceObject>();
+            entranceA[i].Initialize(ed, transform);
 
             if (Global.isDebugMode)
             {
                 GameObject obj = DebugUtility.AddArrowView(ed.direction);
-                obj.transform.parent = entrance[i].transform;
+                obj.GetComponent<SpriteRenderer>().color = new Color(0.8f, 0.1f, 0);
+                obj.transform.parent = entranceA[i].transform;
                 obj.transform.localPosition = Vector3.zero;
             }
         }
+
+        // EntranceB
+        entranceB = new MapEntranceObject[mapData.entranceB.Length];
+        for (int i = 0; i < entranceB.Length; i++)
+        {
+            var ed = mapData.entranceB[i];
+            entranceB[i] = new GameObject(ed.name).AddComponent<MapEntranceObject>();
+            entranceB[i].Initialize(ed, transform);
+
+            if (Global.isDebugMode)
+            {
+                GameObject obj = DebugUtility.AddArrowView(ed.direction);
+                obj.GetComponent<SpriteRenderer>().color = new Color(0, 0.1f, 0.8f);
+                obj.transform.parent = entranceB[i].transform;
+                obj.transform.localPosition = Vector3.zero;
+            }
+        }
+
 
         // Events
         events = new MapEventObject[mapData.events.Length];
@@ -93,16 +110,6 @@ public class FieldMapObject : PixelObject
                 obj.GetComponent<SpriteRenderer>().size = mapData.events[i].size;
             }
         }
-
-        units = new List<Unit>();
-        /*
-        foreach (MapEnemyData en in mapData.enemys)
-        {
-            Enemy enemy = creater.CreateEnemy(en.enemyName, en.positon);
-            enemy.transform.parent = transform;
-            AddEnemy(enemy);
-        }
-        */
 
         animationMapSprite = new List<AnimationMapSprite>();
 
@@ -138,7 +145,7 @@ public class FieldMapObject : PixelObject
     {
         if (location.x < 0 || location.y < 0)
             return false;
-        if (areaSize.x < location.x || areaSize.y < location.y)
+        if (areaSize.x <= location.x || areaSize.y <= location.y)
             return false;
         return true;
     }
@@ -147,30 +154,22 @@ public class FieldMapObject : PixelObject
     {
         for (int i = 0; i < animationMapSprite.Count; i++)
             animationMapSprite[i].Execute();
-        for (int i = 0; i < units.Count; i++) 
-            ObjectExecute(units[i]);
-
-        void ObjectExecute(MassObject obj)
-        {
-            if (obj.isDestroy == false)
-                obj.Execute();
-        }
     }
 
     public void CheckDestroy()
     {
-        for (int i = units.Count - 1; 0 <= i; i--)
-            if (units[i].isDestroy == true)
-            {
-                Destroy(units[i].gameObject);
-                units.RemoveAt(i);
-            }
+        // Empty
     }
 
     // ----------
 
-    public MapEntranceObject GetEntrance(int index)
+    public MapEntranceObject GetEntranceA(int index)
     {
-        return entrance[index];
+        return entranceA[index];
+    }
+
+    public MapEntranceObject GetEntranceB(int index)
+    {
+        return entranceB[index];
     }
 }

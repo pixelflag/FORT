@@ -8,7 +8,7 @@ public class BattleLogic : DI
     // 武器の影響を取り込む
     public LifeLogic lifeLogic { get; private set; }
 
-    private int damageInvisibleFrame = 10;
+    private int damageInvisibleFrame = 10; // マスターデータ参照へ
     protected List<DamageEvent> damageEvents;
 
     public BattleLogic(UnitType type)
@@ -16,6 +16,7 @@ public class BattleLogic : DI
         this.type = type;
 
         lifeLogic = new LifeLogic();
+        lifeLogic.SetMaxlife(data.GetUnitData(type).maxLife);
         lifeLogic.FullRecovery();
 
         damageEvents = new List<DamageEvent>();
@@ -31,15 +32,21 @@ public class BattleLogic : DI
             if (damageEvents[i].isZeroWait)
                 damageEvents.RemoveAt(i);
         }
-        damageInvisibleFrame--;
     }
 
     public void AddDamaeEvent(AttackData attack)
     {
-        foreach (DamageEvent de in damageEvents)
+        if(damageEvents.Count == 0)
         {
-            if (de.id != attack.id)
-                damageEvents.Add(new DamageEvent(attack.id, damageInvisibleFrame, attack));
+            damageEvents.Add(new DamageEvent(attack.id, damageInvisibleFrame, attack));
+        }
+        else
+        {
+            for(int i=0; i < damageEvents.Count; i++)
+            {
+                if (damageEvents[i].id != attack.id)
+                    damageEvents.Add(new DamageEvent(attack.id, damageInvisibleFrame, attack));
+            }
         }
     }
 
@@ -47,11 +54,13 @@ public class BattleLogic : DI
     {
         var dr = new DamageResult();
 
-        foreach (DamageEvent ev in damageEvents)
+        for (int i = 0; i < damageEvents.Count; i++)
         {
-            dr.damage += ev.attack.power;
-            dr.vector += Calculate.PositionToNomaliseVector(ev.attack.position, position);
-            ev.EndDamage();
+            if (damageEvents[i].isEndDamage) continue;
+
+            dr.damage += damageEvents[i].attack.power;
+            dr.vector += Calculate.PositionToNomaliseVector(damageEvents[i].attack.position, position);
+            damageEvents[i].EndDamage();
         }
 
         lifeLogic.SetLife(lifeLogic.current - dr.damage);
@@ -59,7 +68,7 @@ public class BattleLogic : DI
     }
 }
 
-public struct DamageEvent
+public class DamageEvent
 {
     public int id;
     public int wait;
@@ -77,7 +86,7 @@ public struct DamageEvent
 
     public void CountDown()
     {
-        wait--;
+        wait = wait - 1;
     }
 
     public void EndDamage()

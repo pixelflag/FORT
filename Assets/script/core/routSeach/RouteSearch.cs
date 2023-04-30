@@ -42,11 +42,11 @@ public static class RouteSearch
         // map座標に変換
         Vector2Int currentLocation = MapUtility.PositionToLocation(startPosition);
         Vector2Int targetLocation  = MapUtility.PositionToLocation(targetPosition);
+        routes.Add(MapUtility.LocationToPosition(currentLocation));
 
         // 初期位置がマップ外にはみ出したら終了
         if (!map.ExistsCellData(currentLocation)) 
         {
-            routes.Add(startPosition);
             return RouteSearchResult.OutOfField;
         }
 
@@ -79,7 +79,7 @@ public static class RouteSearch
         // 現在位置と目標位置が一緒の場合は終了。
         if (targetLocation == currentLocation)
         {
-            routes.Add(targetPosition);
+            routes.Add(MapUtility.LocationToPosition(targetLocation));
             return RouteSearchResult.StartingPosition;
         }
 

@@ -9,6 +9,8 @@ public class Weapon : VPixelObject
     private WMotionBase motion = default;
     public WeaponData weaponData { get; private set; }
 
+    public int attackRange => weaponData.attackRange;
+
     public CollisionObject collision { get; private set; }
     public int totalframe => motion.GetTotalFrame();
 

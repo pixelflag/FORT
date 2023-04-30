@@ -11,55 +11,51 @@ public class UnitView : VPixelObject
         this.skin = skin;
     }
 
-    public void AnimationUpdate(Unit model, bool isAttack, int progress, int total)
+    public void WalkAnimUpdate(Unit model)
     {
-        base.ObjectUpdate();
+        walkProgress++;
 
-        if (model.isDead)
-        {
-            spriteRenderer.sprite = skin.GetSprite(12);
-            spriteRenderer.flipX = false;
-            return;
-        }
+        int indexHead = GetSpriteIndexHead(model.direction.direction4);
+        int animFrame = ((int)(walkProgress / walkStep)) % 2;
+        spriteRenderer.sprite = skin.GetSprite(indexHead + animFrame);
+    }
 
-        int indexHead = 0;
+    public void AttackAnimUpdate(Unit model, int progress, int total)
+    {
+        int indexHead = GetSpriteIndexHead(model.direction.direction4);
 
-        switch (model.direction.direction4)
+        // モーションはweaponモーション側からコントロールされるべき。
+        if (progress < total / 2)
+            spriteRenderer.sprite = skin.GetSprite(indexHead + 2);
+        else
+            spriteRenderer.sprite = skin.GetSprite(indexHead + 3);
+    }
+
+    public void Dead()
+    {
+        spriteRenderer.sortingOrder = -1;
+        spriteRenderer.sprite = skin.GetSprite(12);
+        spriteRenderer.flipX = false;
+    }
+
+    private int GetSpriteIndexHead(Direction4Type direction)
+    {
+        switch (direction)
         {
             case Direction4Type.Up:
-                indexHead = 8;
                 spriteRenderer.flipX = false;
-                break;
+                return 8;
             case Direction4Type.Down:
-                indexHead = 0;
                 spriteRenderer.flipX = false;
-                break;
+                return 0;
             case Direction4Type.Left:
-                indexHead = 4;
                 spriteRenderer.flipX = false;
-                break;
+                return 4;
             case Direction4Type.Right:
-                indexHead = 4;
                 spriteRenderer.flipX = true;
-                break;
+                return 4;
         }
-
-        if (isAttack)
-        {
-            // モーションはweaponモーション側からコントロールされるべき。
-            if (progress < total / 2)
-                spriteRenderer.sprite = skin.GetSprite(indexHead + 2);
-            else
-                spriteRenderer.sprite = skin.GetSprite(indexHead + 3);
-        }
-        else
-        {
-            if (!model.isStop)
-                walkProgress++;
-
-            int animFrame = ((int)(walkProgress / walkStep)) % 2;
-            spriteRenderer.sprite = skin.GetSprite(indexHead + animFrame);
-        }
+        return 0;
     }
 
     // Life gauge ----------

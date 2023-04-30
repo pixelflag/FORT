@@ -35,7 +35,8 @@ public class FieldMapData : MonoBehaviour
 
     public MapUnitData[] units;
     public MapEventData[] events;
-    public MapEntranceData[] entrance;
+    public MapEntranceData[] entranceA;
+    public MapEntranceData[] entranceB;
 
     public FieldCellData[] cells;
     public FieldCellData GetCellData(Vector2Int location) => cells[LocationToIndex(location)];
@@ -60,24 +61,39 @@ public class FieldMapData : MonoBehaviour
         // Enemy & Event ----------
         List<MapUnitData> tempEnemyList = new List<MapUnitData>();
         List<MapEventData> tempEventList = new List<MapEventData>();
+        List<MapEntranceData> tempAEntranceList = new List<MapEntranceData>();
+        List<MapEntranceData> tempBEntranceList = new List<MapEntranceData>();
 
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject obj = transform.GetChild(i).gameObject;
             MapUnitData unit = obj.GetComponent<MapUnitData>();
             if (unit != null)
-            {
-                unit.name = unit.unitType.ToString() + "_" + unit.teamID.ToString();
                 tempEnemyList.Add(unit);
-            }
 
             MapEventData eo = obj.GetComponent<MapEventData>();
             if (eo != null)
                 tempEventList.Add(eo);
+
+            MapEntranceData ed = obj.GetComponent<MapEntranceData>();
+            if (ed != null)
+            {
+                switch (ed.teamID)
+                {
+                    case TeamID.A:
+                        tempAEntranceList.Add(ed);
+                        break;
+                    case TeamID.B:
+                        tempBEntranceList.Add(ed);
+                        break;
+                }
+            }
         }
 
         units = tempEnemyList.ToArray();
         events = tempEventList.ToArray();
+        entranceA = tempAEntranceList.ToArray();
+        entranceB = tempBEntranceList.ToArray();
 
         int length = areaSize.x * areaSize.y;
         cells = new FieldCellData[length];
@@ -117,7 +133,7 @@ public class FieldMapData : MonoBehaviour
             }
         }
 
-        EditorUtility.SetDirty(this);   
+        EditorUtility.SetDirty(this);
     }
 }
 

@@ -39,11 +39,14 @@ public class ObjectExecutor :DI
             if (obj.isDestroy == false)
                 obj.Execute();
 
-        for (int i = 0; i < field.teams.Length; i++)
+        for (int t = 0; t < field.teams.Length; t++)
         {
-            for (int j = 0; j < field.teams[i].units.Count; j++)
+            for (int p = 0; p < field.teams[t].platoons.Count; p++)
             {
-                field.teams[i].units[j].Execute();
+                for (int u = 0; u < field.teams[t].platoons[p].units.Count; u++)
+                {
+                    field.teams[t].platoons[p].units[u].Execute();
+                }
             }
         }
 
@@ -64,25 +67,33 @@ public class ObjectExecutor :DI
 
     public void ExecuteEvent()
     {
-        for (int i = 0; i < field.teams.Length; i++)
+        for (int t = 0; t < field.teams.Length; t++)
         {
-            for (int j = 0; j < field.teams[i].units.Count; j++)
+            for (int p = 0; p < field.teams[t].platoons.Count; p++)
             {
-                field.teams[i].units[j].ExecuteEvent();
+                for (int u = 0; u < field.teams[t].platoons[p].units.Count; u++)
+                {
+                    field.teams[t].platoons[p].units[u].ExecuteEvent();
+                }
             }
         }
     }
 
     public void CheckDestroy()
     {
-        for (int i = 0; i < field.teams.Length; i++)
+        for (int t = 0; t < field.teams.Length; t++)
         {
-            for (int j = field.teams[i].units.Count - 1; 0 <= j; j--)
-                if (field.teams[i].units[i].isDestroy == true)
+            for (int p = 0; p < field.teams[t].platoons.Count; p++)
+            {
+                for (int u = field.teams[t].platoons[p].units.Count - 1; 0 <= u; u--)
                 {
-                    Object.Destroy(field.teams[i].units[i].gameObject);
-                    field.teams[i].units.RemoveAt(i);
+                    if (field.teams[t].platoons[p].units[u].isDestroy == true)
+                    {
+                        Object.Destroy(field.teams[t].platoons[p].units[u].gameObject);
+                        field.teams[t].platoons[p].units.RemoveAt(u);
+                    }
                 }
+            }
         }
 
         for (int i = fires.Count - 1; 0 <= i; i--)

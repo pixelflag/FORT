@@ -4,6 +4,10 @@
 public class MapEntranceData : PixelObject
 {
     [SerializeField]
+    private TeamID _teamID;
+    public TeamID teamID => _teamID;
+
+    [SerializeField]
     private Direction4Type _direction;
     public Direction4Type direction => _direction;
 
@@ -17,6 +21,18 @@ public class MapEntranceData : PixelObject
 
         SpriteRenderer render = GetComponent<SpriteRenderer>();
         render.sprite = sprites[(int)direction];
+        switch (_teamID)
+        {
+            case TeamID.A:
+                render.color = new Color(0.8f ,0.1f, 0);
+                break;
+            case TeamID.B:
+                render.color = new Color(0, 0.1f, 0.8f);
+                break;
+            case TeamID.Neutral:
+                render.color = new Color(0.5f, 0.5f, 0.5f);
+                break;
+        }
     }
 #endif
 }

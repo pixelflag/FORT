@@ -32,10 +32,7 @@ public class Calculate
 
     public static Vector3 PositionToNomaliseVector(Vector3 position, Vector3 targetPosition)
     {
-        float radian = PositionToRadian(position, targetPosition);
-        float distance = 1.0f;
-
-        return new Vector3(Mathf.Cos(radian) * distance, Mathf.Sin(radian) * distance, 0);
+        return (targetPosition - position).normalized;
     }
 
     public static float PositionToRadian(Vector3 position, Vector3 targetPosition)

@@ -43,7 +43,7 @@ public class TargetRouteMove
 
     public void Execute(Vector2 currentPosition)
     {
-        if(routes.length == 0) isGoal = true;
+        if (routes.length <= 1) isGoal = true;
 
         if (!isGoal)
         {
@@ -57,8 +57,7 @@ public class TargetRouteMove
                 }
                 else
                 {
-                    int nextIndex = routes.length <= routeIndex + 1 ? routeIndex : routeIndex + 1;
-                    targetPos = SeachNextHalfTarget(routeIndex, nextIndex);
+                    targetPos = SeachNextHalfTarget(routeIndex, routeIndex + 1);
                     routeIndex++;
                 }
             }
@@ -68,6 +67,12 @@ public class TargetRouteMove
     // 配列内の今と次のターゲットの間を追う
     public Vector3 SeachNextHalfTarget(int index, int nextIndex)
     {
+        if (routes.length <= 1)
+            nextIndex = index;
+
+        if(routes.length <= nextIndex)
+            nextIndex = index;
+
         Vector3 p1 = routes.Get(index);
         Vector3 p2 = routes.Get(nextIndex);
         Vector3 p3 = (p2 - p1) / 2 + p1;

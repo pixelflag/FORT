@@ -45,7 +45,7 @@ public class FireObject : MassObject
 public struct FireData
 {
     public FireType fireType;
-    public int teamID;
+    public TeamID teamID;
     public WeaponData weapon;
     public int attackPower;
     public Direction4Type direction;

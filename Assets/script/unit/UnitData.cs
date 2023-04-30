@@ -17,6 +17,7 @@ public enum UnitType
 {
     Knight,
     Soldier,
+    Lancer,
     Elf,
     RedWizard,
     BlueWizard,

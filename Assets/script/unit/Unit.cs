@@ -10,8 +10,10 @@ public class Unit : MassObject
     [SerializeField]
     private int collisionSize = 16;
 
+    private float speed = 0;
+
     public UnitType unitType { get; protected set; }
-    public int teamID { get; protected set; }
+    public TeamID teamID { get; protected set; }
 
     public BattleLogic battle { get; protected set; }
     public Weapon weapon { get; private set; }
@@ -39,7 +41,7 @@ public class Unit : MassObject
         Dead,
     }
 
-    public void Initialize(UnitType unitType, int teamID)
+    public void Initialize(UnitType unitType, TeamID teamID)
     {
         base.Initialize();
 
@@ -77,9 +79,11 @@ public class Unit : MassObject
 
     public void SetVector(Vector2 vector)
     {
+        if (isDead) return;
         if (vector.x == 0 && vector.y == 0) return;
         direction.SetLooking(vector.x, vector.y);
-        _vector += vector * accele;
+        _vector = vector;
+        speed += accele;
     }
 
     public override void Execute()
@@ -89,10 +93,10 @@ public class Unit : MassObject
 
         if (controller != null) controller.Execute();
 
-        x += _vector.x + _force.x;
-        y += _vector.y + _force.y;
-
-        _vector = _vector * friction;
+        x += (_vector.x * speed) + _force.x;
+        y += (_vector.y * speed) + _force.y;
+        speed *= friction;
+        _force *= friction;
 
         z = y;
 
@@ -101,31 +105,37 @@ public class Unit : MassObject
         switch (state)
         {
             case State.Move:
+                view.WalkAnimUpdate(this);
                 break;
             case State.Attack:
                 attackProgress++;
                 if (attackTotalFrame <= attackProgress)
                     state = State.Move;
+                view.AttackAnimUpdate(this, attackProgress, attackTotalFrame);
+                weapon.AnimationUpdate(state == State.Attack, direction.direction4, attackProgress);
                 break;
             case State.Dead:
                 deadCount++;
                 if (deadWait < deadCount)
+                {
+                    // ObjectDestroy();
                     if (OnDead != null) OnDead(this);
+                }
                 break;
         }
 
         battle.Execute();
 
         // render
-        view.AnimationUpdate(this, state == State.Attack, attackProgress, attackTotalFrame);
+        view.ObjectUpdate();
         view.Draw();
 
-        weapon.AnimationUpdate(state == State.Attack, direction.direction4, attackProgress);
     }
 
-    public void Attack()
+    public void Attack(Vector2 vector)
     {
         if (isDead) return;
+        direction.SetLooking(vector.x, vector.y);
 
         attackTotalFrame = weapon.totalframe;
         attackProgress = 0;
@@ -136,7 +146,6 @@ public class Unit : MassObject
 
     public void CancelAttack()
     {
-        state = State.Move;
         weapon.StopAnimation();
     }
 
@@ -144,6 +153,9 @@ public class Unit : MassObject
     {
         if (isDead) return;
         state = State.Dead;
+
+        // 死んだ表示。
+        view.Dead();
 
         collision.objectCollisionDisabled = true;
         CancelAttack();
@@ -170,10 +182,7 @@ public class Unit : MassObject
     // CollisionHitEvent -----
     public void HitAttack(AttackData attack)
     {
-        // エヴェント処理のように、すべてのExcute実行後にEvent処理フェイズを行うようにする。
-
         battle.AddDamaeEvent(attack);
-
     }
 
     public void ExecuteEvent()
@@ -191,20 +200,8 @@ public class Unit : MassObject
         // Vector3 mp = Calculate.MiddlePosition(attack.position, position);
         // creater.Create(ObjectName.EffectBattleEffect, mp);
 
-        // 同じ武器が連続して入らないようにするには。
-        // 同じ武器で複数人には当たるべき。
-
-        // さっきあたったリストを作る。
-        // 武器ごとにそれもってたら、偉い数やで。
-
-        // 対象を倒せたかどうかを渡す必要がある。
-        // 死んだときにダメージ量によって経験値を分配するには、攻撃者を記録しておく必要がある。
-
         // knock back
-        int dist = result.damage - 10; // ノックバックの仕組みを考え直す
-        dist = dist < 0 ? 0 : dist;
-        int refrectionPower = dist / 50 + 5;
-        refrectionPower = refrectionPower > 8 ? 8 : refrectionPower;
+        float refrectionPower = Mathf.Clamp((result.damage / data.knockBackDamageGain), 0.1f, data.knockBackMaxPower) + data.knockBackPowerOffset;
         _force = result.vector * refrectionPower;
     }
 }
