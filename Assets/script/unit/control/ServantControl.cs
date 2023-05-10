@@ -2,6 +2,8 @@
 
 public class ServantControl : DI, IUnitcontroller
 {
+    public static FieldScene field;
+
     private PRandom random;
 
     private Unit masterUnit;
@@ -76,7 +78,7 @@ public class ServantControl : DI, IUnitcontroller
                     {
                         state = State.Move;
                         targetUnit = result.unit;
-                        targetRouteMove.SetTarget(field.map, selfUnit.position, result.unit.position);
+                        targetRouteMove.SetTarget(field.map, selfUnit.position, result.unit.position); 
                     }
                     else
                     {

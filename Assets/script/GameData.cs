@@ -4,6 +4,19 @@ public class GameData
 {
     public static GameData instance;
 
+    [SerializeField]
+    private int[] _worldMoveCost =
+    {
+        8,
+        2,
+        0,
+        5,
+        6,
+        10,
+        2,
+    };
+    public int GetMoveCost(WorldCellType cType) => _worldMoveCost[(int)cType];
+
     public UnitData[] unitData;
     public UnitData GetUnitData (UnitType type) => unitData[(int)type];
 

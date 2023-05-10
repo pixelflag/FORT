@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class UnitMouseController : DI, IUnitcontroller
 {
+
     public bool isControlLock { get; set; }
     private Unit unit;
     private TargetRouteMove logic;
+    private ICellMap map;
+
+    public UnitMouseController(ICellMap map)
+    {
+        this.map = map;
+    }
 
     public void SetUnit(Unit unit)
     {
@@ -31,7 +38,7 @@ public class UnitMouseController : DI, IUnitcontroller
             Debug.Log("mouse position : " + taegetPosition);
 
             taegetPosition.z = 0;
-            logic.SetTarget(field.map, unit.position, taegetPosition);
+            logic.SetTarget(map, unit.position, taegetPosition);
 
             //UpdateRouteView();
         }

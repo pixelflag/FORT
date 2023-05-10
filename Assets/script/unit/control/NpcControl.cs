@@ -2,6 +2,8 @@
 
 public class NpcControl : DI, IUnitcontroller
 {
+    public static FieldScene field;
+
     private PRandom random;
 
     private Unit selfUnit;

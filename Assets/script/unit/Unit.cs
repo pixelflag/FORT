@@ -24,9 +24,6 @@ public class Unit : MassObject
     public DirectionControl direction { get; protected set; }
     public void SetDirection(Direction4Type d) { direction.SetDirection(d); }
 
-    private int deadWait = 30;
-    private int deadCount = 0;
-
     public int attackProgress { get; private set; }
     public int attackTotalFrame { get; private set; }
 
@@ -105,22 +102,16 @@ public class Unit : MassObject
         switch (state)
         {
             case State.Move:
-                view.WalkAnimUpdate(this);
+                view.WalkAnimUpdate(direction.direction4);
                 break;
             case State.Attack:
                 attackProgress++;
                 if (attackTotalFrame <= attackProgress)
                     state = State.Move;
-                view.AttackAnimUpdate(this, attackProgress, attackTotalFrame);
+                view.AttackAnimUpdate(direction.direction4, attackProgress, attackTotalFrame);
                 weapon.AnimationUpdate(state == State.Attack, direction.direction4, attackProgress);
                 break;
             case State.Dead:
-                deadCount++;
-                if (deadWait < deadCount)
-                {
-                    // ObjectDestroy();
-                    if (OnDead != null) OnDead(this);
-                }
                 break;
         }
 
@@ -159,6 +150,9 @@ public class Unit : MassObject
 
         collision.objectCollisionDisabled = true;
         CancelAttack();
+
+        // ObjectDestroy();
+        if (OnDead != null) OnDead(this);
     }
 
     public AttackData GetAttackData()

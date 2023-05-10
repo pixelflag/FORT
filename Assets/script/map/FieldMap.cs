@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class FieldMapObject : PixelObject
+public class FieldMap : PixelObject, ICellMap
 {
     private FieldMapData mapData;
     public FieldMapName mapName => mapData.mapName;
@@ -12,7 +12,7 @@ public class FieldMapObject : PixelObject
     private Tilemap groundMap;
 
     private Cell[,] cells;
-    public Cell GetCell(Vector2Int location) => cells[location.x, location.y];
+    public ICell GetCell(Vector2Int location) => cells[location.x, location.y];
 
     public List<AnimationMapSprite> animationMapSprite { get; private set; }
     public void AddAnimationSprite(AnimationMapSprite aSprite) { animationMapSprite.Add(aSprite); }
@@ -172,4 +172,11 @@ public class FieldMapObject : PixelObject
     {
         return entranceB[index];
     }
+}
+
+public interface ICellMap
+{
+    ICell GetCell(Vector2Int location);
+    bool ExistsCellData(Vector2Int location);
+    Vector2Int areaSize { get; }
 }

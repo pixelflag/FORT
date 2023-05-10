@@ -4,8 +4,8 @@ public class SandBox : DIMonoBehaviour
 {
     [SerializeField]
     private FieldMapData mapData;
-    private ObjectCollision objectCollision;
-    private MapCollision mapCollision;
+
+    private FieldScene field;
 
     private void Start()
     {
@@ -39,15 +39,13 @@ public class SandBox : DIMonoBehaviour
             t2.CreatePlatoon(dd2.platoon[i], creater.GetFormation(0));
         }
 
+        field = new FieldScene();
         field.CreateMap(mapData);
         field.SetTeam(t1);
         field.SetTeam(t2);
 
         CameraObject mainCamera = Camera.main.GetComponent<CameraObject>();
         mainCamera.Initialize();
-
-        mapCollision = new MapCollision();
-        objectCollision = new ObjectCollision();
 
         field.FieldStart();
     }
@@ -59,12 +57,6 @@ public class SandBox : DIMonoBehaviour
         objects.Execute();
         field.Execute();
 
-        mapCollision.Execute();
-        objectCollision.Execute();
-
-        objects.ExecuteEvent();
-
-        field.CheckEvent();
         objects.CheckDestroy();
 
         Global.count++;

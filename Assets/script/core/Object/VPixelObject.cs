@@ -33,9 +33,7 @@ public class VPixelObject:DIMonoBehaviour
 
     public void Draw()  
     {
-        Vector3 pos = new Vector3();
-        pos.x = Mathf.Round(_transform.position.x);
-        pos.y = Mathf.Round(_transform.position.y);
+        Vector3 pos = _transform.position;
         pos.z = pos.y + pixelObj.h;
         _transform.position = pos;
     }

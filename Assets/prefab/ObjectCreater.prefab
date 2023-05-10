@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae76fed668dbc5e4196b9d459a296421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _worldMapTiles: {fileID: -4855048469738756966, guid: d52a429753197f640b65a6209db207e2,
+    type: 3}
+  _worldCastlePrefab: {fileID: 3280267636328756409, guid: e862583616eec3541a6640c4d438b863,
+    type: 3}
+  _worldUnitPrefab: {fileID: -3623779942119005356, guid: c195e14310ca7bc43a3b37222c1d7b7c,
+    type: 3}
+  _fieldLibrary: {fileID: 0}
   unitPrefab: {fileID: 8934529389566585844, guid: b9db8c30b1f6bca4abcc037ba8a2bae3,
     type: 3}
   lifeGaugePrefav: {fileID: 5911727492327686170, guid: 86199a0cb4faa264a88c3912a11a3b39,
@@ -58,6 +65,7 @@ MonoBehaviour:
     type: 3}
   weaponLib: {fileID: 8737908434195541701, guid: 78853e836ae75cd45a8d4c90310d8b3b,
     type: 3}
+  miniNum: {fileID: 2042897155661488491, guid: 459668597e2246b4893ec24a067e4771, type: 3}
   DebugSprites:
   - {fileID: -4900796950499514941, guid: 56b02a55a58888d479d44a593921955e, type: 3}
   - {fileID: -546806618, guid: 56b02a55a58888d479d44a593921955e, type: 3}

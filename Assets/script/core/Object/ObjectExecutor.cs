@@ -15,6 +15,8 @@ public class ObjectExecutor :DI
     public List<FireObject> fires { get; private set; }
     public List<MassObject> effects { get; private set; }
 
+    public Vector2 areaSize;
+
     public void Reset()
     {
         // Destroyはフラグをたてて、確実にdestroyの処理タイミングで処分する。
@@ -39,18 +41,6 @@ public class ObjectExecutor :DI
             if (obj.isDestroy == false)
                 obj.Execute();
 
-        for (int t = 0; t < field.teams.Length; t++)
-        {
-            for (int p = 0; p < field.teams[t].platoons.Count; p++)
-            {
-                for (int u = 0; u < field.teams[t].platoons[p].units.Count; u++)
-                {
-                    field.teams[t].platoons[p].units[u].Execute();
-                }
-            }
-        }
-
-        Vector2 areaSize = field.map.areaSize;
         foreach (MassObject obj in fires)
         {
             if (obj.x < 0 || areaSize.x < obj.x || obj.y < areaSize.y || 0 < obj.y)
@@ -65,37 +55,8 @@ public class ObjectExecutor :DI
         }
     }
 
-    public void ExecuteEvent()
-    {
-        for (int t = 0; t < field.teams.Length; t++)
-        {
-            for (int p = 0; p < field.teams[t].platoons.Count; p++)
-            {
-                for (int u = 0; u < field.teams[t].platoons[p].units.Count; u++)
-                {
-                    field.teams[t].platoons[p].units[u].ExecuteEvent();
-                }
-            }
-        }
-    }
-
     public void CheckDestroy()
     {
-        for (int t = 0; t < field.teams.Length; t++)
-        {
-            for (int p = 0; p < field.teams[t].platoons.Count; p++)
-            {
-                for (int u = field.teams[t].platoons[p].units.Count - 1; 0 <= u; u--)
-                {
-                    if (field.teams[t].platoons[p].units[u].isDestroy == true)
-                    {
-                        Object.Destroy(field.teams[t].platoons[p].units[u].gameObject);
-                        field.teams[t].platoons[p].units.RemoveAt(u);
-                    }
-                }
-            }
-        }
-
         for (int i = fires.Count - 1; 0 <= i; i--)
             if (fires[i].isDestroy == true)
             {

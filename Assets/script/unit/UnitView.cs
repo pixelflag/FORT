@@ -11,18 +11,18 @@ public class UnitView : VPixelObject
         this.skin = skin;
     }
 
-    public void WalkAnimUpdate(Unit model)
+    public void WalkAnimUpdate(Direction4Type direction4)
     {
         walkProgress++;
 
-        int indexHead = GetSpriteIndexHead(model.direction.direction4);
+        int indexHead = GetSpriteIndexHead(direction4);
         int animFrame = ((int)(walkProgress / walkStep)) % 2;
         spriteRenderer.sprite = skin.GetSprite(indexHead + animFrame);
     }
 
-    public void AttackAnimUpdate(Unit model, int progress, int total)
+    public void AttackAnimUpdate(Direction4Type direction4, int progress, int total)
     {
-        int indexHead = GetSpriteIndexHead(model.direction.direction4);
+        int indexHead = GetSpriteIndexHead(direction4);
 
         // モーションはweaponモーション側からコントロールされるべき。
         if (progress < total / 2)

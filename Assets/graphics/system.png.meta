@@ -796,7 +796,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -804,6 +804,216 @@ TextureImporter:
       bones: []
       spriteID: 9a5ee86d373fff44db369c3c1541122b
       internalID: -546806618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: -0, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da67ce47433f73b4fb4f348aefaaac0b
+      internalID: 2134123216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650383d5bfe057849b44f3f4da5b27cb
+      internalID: -1061089323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a931b5723534f5346b3071d8784b4a93
+      internalID: -1367906696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num3
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae03b432557548c4f961140adc9aa944
+      internalID: 1081902473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d87ce41cf5909478389abb3b7498b5
+      internalID: 443512627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574491b8a1946964ba35e8d1dc541a4d
+      internalID: 1896940217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5cba878156be6468ddd65caa11b1da
+      internalID: -857870219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num7
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9498c1c76e0b849be06c187b0b16e1
+      internalID: -1479001487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: -0, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeb6ea70e6bf4a642915db765a27c456
+      internalID: -247511917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: num9
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 89
+        width: 5
+        height: 7
+      alignment: 9
+      pivot: {x: 0, y: -0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c85a25a57c800e49997b915f6d0456c
+      internalID: -348154133
       vertices: []
       indices: 
       edges: []
@@ -824,14 +1034,22 @@ TextureImporter:
       system_arrowR: -6088974121743375344
       system_life_6: -2522623676408661822
       system_life_2: -2230344664321657764
+      num4: 443512627
       system_arrowL: 3700354298266273774
       box: 7259968262808993181
+      num7: -1479001487
       system_life_1: -2100489048053794705
+      num0: 2134123216
+      num1: -1061089323
       system_life_5: 4328117330473772908
       system_life_50: 8351079517381804782
+      num3: 1081902473
+      num5: 1896940217
       system_life_7: -8504924614247502293
+      num6: -857870219
       system_life_8: -9206035581734751168
       system_life_20: 8536171725373884548
+      num2: -1367906696
       system_life_3: 7856286379724016020
       system_arrowU: 7434870685880743829
       system_arrowD: -6129910206980696903
@@ -841,10 +1059,12 @@ TextureImporter:
       mapGrid1: -704235928200180089
       mapGrid4: 8136167463020123562
       system_location: -546806618
+      num9: -348154133
       mapGrid3: -8607831309750797696
       system_life_40: -6403802054100971300
       system_ball_green: 1075851050360299123
       system_ball_blue: -6069435956423059727
+      num8: -247511917
       system_life_10: -5537350932992012242
       mapGrid2: -1467012378682709112
       system_life_4: 296586257134934377

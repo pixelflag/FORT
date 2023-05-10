@@ -19,7 +19,7 @@ public class TargetRouteMove
         targetPos = new Vector2();
     }
 
-    public bool SetTarget(FieldMapObject map, Vector3 position, Vector3 targetPosition)
+    public bool SetTarget(ICellMap map, Vector3 position, Vector3 targetPosition)
     {
         RouteSearchResult result = RouteSearch.Search(map, routes, position, targetPosition);
 

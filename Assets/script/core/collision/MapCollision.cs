@@ -3,16 +3,22 @@ using UnityEngine;
 
 public class MapCollision : DI
 {
+	FieldMap map;
+	public Team[] teams;
+
+	public MapCollision(Team[] teams, FieldMap map)
+    {
+		this.teams = teams;
+		this.map = map;
+	}
+
 	public void Execute()
 	{
-		FieldMapObject map = field.map;
-
-
-		for (int t = 0; t < field.teams.Length; t++)
+		for (int t = 0; t < teams.Length; t++)
 		{
-			for (int p = 0; p < field.teams[t].platoons.Count; p++)
+			for (int p = 0; p < teams[t].platoons.Count; p++)
 			{
-				List<Unit> units = field.teams[t].platoons[p].units;
+				List<Unit> units = teams[t].platoons[p].units;
 				for (int u = 0; u < units.Count; u++)
 				{
 					CheckMapCorrection(units[u]);
@@ -49,7 +55,7 @@ public class MapCollision : DI
 						Vector2Int location = new Vector2Int(x, -y);
 						if (map.ExistsCellData(location))
 						{
-							Cell cell = map.GetCell(location);
+							Cell cell = map.GetCell(location) as Cell;
 							if (cell.isCollision)
 								resultPosition = BoxCollision.CirclePositionCorrection(resultPosition, radius, cell.box);
 						}
@@ -80,7 +86,7 @@ public class MapCollision : DI
 						Vector2Int location = new Vector2Int(x, y);
 						if (map.ExistsCellData(location))
 						{
-							Cell cell = map.GetCell(location);
+							Cell cell = map.GetCell(location) as Cell;
 							if (cell.canBreak && !cell.isBroken)
 							{
 								Box cellBox = cell.box;

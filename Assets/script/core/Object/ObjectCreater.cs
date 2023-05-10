@@ -11,6 +11,18 @@ public class ObjectCreater : DIMonoBehaviour
     }
 
     [SerializeField]
+    private WorldMapTileLibrary _worldMapTiles = default;
+    public WorldMapTileLibrary worldMapTiles => _worldMapTiles;
+    [SerializeField]
+    private WorldMapCastle _worldCastlePrefab = default;
+    [SerializeField]
+    private WorldUnit _worldUnitPrefab = default;
+
+    [SerializeField]
+    private FieldDataLiblary _fieldLibrary = default;
+    public FieldDataLiblary fieldLibrary => _fieldLibrary;
+
+    [SerializeField]
     private Unit unitPrefab = default;
     [SerializeField]
     private LifeGauge lifeGaugePrefav = default;
@@ -27,6 +39,41 @@ public class ObjectCreater : DIMonoBehaviour
     private MapSpriteLibrary mapSpriteLib = default;
     [SerializeField]
     private WeaponLibrary weaponLib = default;
+
+    public WorldMapCastle CreateWorldCastle(WorldMapCastleData data, Transform parent)
+    {
+        var castle = Instantiate(_worldCastlePrefab, parent).GetComponent<WorldMapCastle>();
+        castle.Initialize(data);
+        return castle;
+    }
+
+    public WorldUnit CreateWorldUnit(UnitType type, TeamID teamID, Vector3 position)
+    {
+        switch (type)
+        {
+            case UnitType.Knight:     return Create(0);
+            case UnitType.Soldier:    return Create(1);
+            case UnitType.Lancer:     return Create(12);
+            case UnitType.Elf:        return Create(9);
+            case UnitType.RedWizard:  return Create(6);
+            case UnitType.BlueWizard: return Create(5);
+            case UnitType.Lumberjack: return Create(13);
+            case UnitType.Dwarves:    return Create(16);
+            case UnitType.Thief:      return Create(8);
+            default:
+                throw new System.Exception("Failed to generate. : " + type);
+        }
+
+        WorldUnit Create(int skinID)
+        {
+            WorldUnit unit = Instantiate(_worldUnitPrefab).GetComponent<WorldUnit>();
+            unit.Initialize(type, teamID);
+            unit.position = position;
+            unit.view.SetSkin(unitSkinLib.Get(skinID));
+
+            return unit;
+        }
+    }
 
     public Unit CreateUnit(UnitType type, TeamID teamID, Vector3 position)
     {
@@ -174,12 +221,21 @@ public class ObjectCreater : DIMonoBehaviour
         return lifeGauge;
     }
 
-    // Debug
-
+    // Debug -----
+    [SerializeField]
+    private MiniNum miniNum = default;
     [SerializeField]
     private Sprite[] DebugSprites = default;
     [SerializeField]
     private Sprite[] DebugArrow = default;
+
+    public MiniNum CreateNumiNum(int num, Transform parent, Vector3 position)
+    {
+        MiniNum mNum = Instantiate(miniNum, parent);
+        mNum.transform.position = position;
+        mNum.SetNum(num);
+        return mNum;
+    }
 
     public Sprite GetDebugSprite(int index)
     {

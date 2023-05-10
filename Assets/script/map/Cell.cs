@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class Cell
+public class Cell: ICell
 {
     public FieldCellData data;
-    public CellScore routeScore;
+    public CellScore routeScore { get; set; }
     private Box _box;
     public Box box => _box;
+    public Vector2Int location => data.location;
 
     public bool canBreak => data.broken.b;
 
@@ -89,4 +90,11 @@ public class Cell
 
     public delegate void CellBrokenDelegate();
     public CellBrokenDelegate OnBroken;
+}
+
+public interface ICell
+{
+    bool isCollision { get; }
+    CellScore routeScore { get; }
+    Vector2Int location { get; }
 }

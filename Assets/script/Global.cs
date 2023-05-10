@@ -3,8 +3,8 @@ using pixelflag.controller;
 
 public static class Global
 {
-    public static int screenWidth = 320;
-    public static int screenHeight = 240;
+    public static int screenWidth = Screen.width / 2;
+    public static int screenHeight = Screen.height / 2;
 
     public static Vector2Int gridSize = new Vector2Int(16,16);
 
@@ -55,7 +55,6 @@ public class DIMonoBehaviour : MonoBehaviour
 {
     protected static ObjectExecutor objects;
     protected static ObjectCreater creater;
-    protected static FieldControl field;
     protected static SoundManager sound;
     protected static GameData data;
 
@@ -65,7 +64,6 @@ public class DIMonoBehaviour : MonoBehaviour
         creater = ObjectCreater.instance;
         sound = SoundManager.instance;
         data = GameData.instance;
-        field = FieldControl.instance;
     }
 }
 
@@ -73,7 +71,6 @@ public class DI
 {
     protected static ObjectExecutor objects;
     protected static ObjectCreater creater;
-    protected static FieldControl field;
     protected static SoundManager sound;
     protected static GameData data;
 
@@ -83,6 +80,5 @@ public class DI
         creater = ObjectCreater.instance;
         sound = SoundManager.instance;
         data = GameData.instance;
-        field = FieldControl.instance;
     }
 }

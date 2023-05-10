@@ -3,8 +3,7 @@ using UnityEngine;
 
 public static class RouteSearch
 {
-    private static int _searchLimit = 128;
-    public static int searchLimit => _searchLimit;
+    public static int searchLimit = 128;
     private static FixedArray<Vector2Int> tempRoutes;
     private static List<CellScore> scoreList;
 
@@ -27,12 +26,12 @@ public static class RouteSearch
 
     public static void Initialize()
     {
-        tempRoutes = new FixedArray<Vector2Int>(_searchLimit);
+        tempRoutes = new FixedArray<Vector2Int>(searchLimit);
         scoreList = new List<CellScore>();
     }
 
     public static RouteSearchResult Search(
-        FieldMapObject map,
+        ICellMap map,
         FixedArray<Vector2> routes,
         Vector3 startPosition,
         Vector3 targetPosition)
@@ -68,8 +67,7 @@ public static class RouteSearch
                 Vector2Int newloc = location + aroundOffset[i];
                 if (map.ExistsCellData(newloc))
                 {
-                    Cell cell = map.GetCell(newloc);
-                    if (!cell.isCollision)
+                    if (!map.GetCell(newloc).isCollision)
                         return newloc;
                 }
             }
@@ -153,12 +151,12 @@ public static class RouteSearch
         {
             if (map.ExistsCellData(location))
             {
-                Cell cell = map.GetCell(location);
+                ICell cell = map.GetCell(location);
                 CellScore score = cell.routeScore;
                 if (!cell.isCollision && score.isClose == false && score.isChecked == false)
                 {
-                    score.Ascore = (targetLocation  - cell.data.location).sqrMagnitude;
-                    score.Bscore = (currentLocation - cell.data.location).sqrMagnitude;
+                    score.Ascore = (targetLocation  - cell.location).sqrMagnitude;
+                    score.Bscore = (currentLocation - cell.location).sqrMagnitude;
                     score.isChecked = true;
                     score.parent = activeCell;
                     scoreList.Add(score);
